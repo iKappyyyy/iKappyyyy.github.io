@@ -1,0 +1,262 @@
+body {
+  background-color: rgb(27, 27, 27);
+  transition: background-color 0.15s
+}
+
+.save-colour-menu {
+  display: none;
+  background-color: #ffffffb6;
+  position: absolute;
+  top: 0px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.save-button {
+  padding: 8px 32px;
+  font-family: Nunito, Arial;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+}
+
+.save-button:hover {
+  background-color: rgb(221, 221, 221);
+}
+
+.save-button:active {
+  opacity: 0.8;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.colour-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 10px;
+  gap: 10px;
+  width: 600px;
+  height: 600px;
+}
+
+.generate-button {
+  padding: 10px 50px;
+  font-size: 25px;
+  font-family: Nunito, Arial;
+  font-weight: 1000;
+  cursor: pointer;
+  background-color: pink;
+  border: 3px solid rgb(189, 144, 152);
+  border-radius: 10px;
+  color: rgb(27, 27, 27);
+  user-select: none;
+}
+
+.generate-button:hover {
+  background-color: rgb(207, 163, 171);
+  border-color: rgb(156, 117, 124);
+}
+
+.generate-button:active {
+  opacity: 0.8;
+}
+
+.dark-theme-generate-button {
+  background-color: rgb(41, 119, 119);
+  border-color: rgb(22, 63, 63);
+  color: rgb(255, 255, 255);
+}
+
+.dark-theme-generate-button:hover {
+  background-color: rgb(31, 87, 87);
+  border-color: rgb(11, 32, 32);
+}
+
+.dark-theme-generate-button:active {
+  opacity: 0.8;
+}
+
+.colour {
+  background-color: black;
+  cursor: pointer;
+  transition: box-shadow 0.05s, opacity 0.15s;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.colour .tooltip {
+  position: absolute;
+  bottom: -35px;
+  z-index: 1;
+  background-color: rgb(240, 240, 240);
+  width: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-family: Nunito, Arial;
+  font-size: 13px;
+  font-weight: bold;
+  user-select: none;
+  visibility: hidden;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.colour .colour-tooltip {
+  position: absolute;
+}
+
+.colour:hover {
+  box-shadow: inset 0px 0px 0px 5px #000000;
+}
+
+.colour:hover .colour-tooltip {
+  visibility: visible;
+}
+
+.colour:active .copy-tooltip {
+  visibility: visible;
+}
+
+.colour:active .colour-tooltip {
+  visibility: hidden;
+}
+
+.switch-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 550px;
+}
+
+.checkbox-title {
+  font-family: Nunito, Arial;
+  position: absolute;
+  top: -20px;
+  font-size: 12px;
+  width: 80px;
+  text-align: center;
+  transition: color 0.15s;
+}
+
+.switch-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.range-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.range-title {
+  font-family: Nunito, Arial;
+  color: white;
+}
+
+.range {
+  appearance: none;
+  width: 250px;
+  height: 15px;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin-top: 10px;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.range::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
