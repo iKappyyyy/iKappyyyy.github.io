@@ -5,7 +5,7 @@ const projectsInfo = [
   { folder: 'youtube-recreation', file: 'youtube.html', title: 'YouTube!' },
   { folder: 'stopwatch', file: 'stopwatch.html', title: 'Stopwatch' },
   { folder: 'tic-tac-toe', file: 'tic-tac-toe.html', title: 'Tic Tac Toe!' },
-  { folder: 'colour-generator', file: 'colour-generator.html', title: 'Colour Generator!' }
+  { folder: 'colour-generator', file: 'generator.html', title: 'Colour Generator!' }
 ];
 const projectsElement = document.querySelector('.js-projects');
 
