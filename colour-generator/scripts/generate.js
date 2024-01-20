@@ -1,6 +1,6 @@
 let colourAmount = Number(localStorage.getItem('amount')) || 5;
 let copyType = localStorage.getItem('type') || 'hex';
-let colours = generateHTML(copyType, colourAmount, JSON.parse(localStorage.getItem('colours'))) || generateHTML(copyType, colourAmount);
+let colours = generateHTML(copyType, colourAmount);
 document.querySelector('.js-generate-button').addEventListener('click', () => {
   colours = generateHTML(copyType, colourAmount);
 });
