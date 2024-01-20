@@ -1,0 +1,60 @@
+body {
+  font-family: Roboto, Arial;
+  background-color: pink;
+  color: white;
+  user-select: none;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 97.9vh;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.question-button {
+  background-color: rgb(204, 146, 155);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 20px 60px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.5s, background-color 0.15s, color 0.15s, opacity 0.15s;
+}
+
+.yes-button:hover {
+  background-color: white;
+  color: rgb(192, 141, 150);
+}
+
+.yes-button:active {
+  opacity: 0.8;
+}
+
+.question {
+  font-weight: bold;
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  color: rgb(224, 224, 224);
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.10);
+}
+
+.gif {
+  width: 400px;
+}

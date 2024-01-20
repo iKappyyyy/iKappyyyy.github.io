@@ -1,0 +1,69 @@
+body {
+  margin: 0px;
+  background-color: lightcyan;
+}
+
+.projects-grid-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+}
+
+
+.projects:hover .project {
+  opacity: 0.6;
+}
+
+.projects:hover .project:hover {
+  opacity: 1;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.row {
+  display: flex;
+}
+
+.project {
+  width: 400px;
+  height: 230px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border: 2px solid black;
+  transition: opacity 0.15s, padding 0.15s, margin 0.15s;
+  margin-left: 20px;
+  margin-right: 20px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.project-title {
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.603);
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.project-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
