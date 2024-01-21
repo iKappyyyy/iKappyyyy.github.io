@@ -10,7 +10,7 @@ const rangeTitleElement = document.querySelector('.js-range-title');
 colourAmountSliderElement.value = colourAmount;
 rangeTitleElement.innerHTML = `Colours: ${colourAmount}`;
 colourAmountSliderElement.addEventListener('input', () => {
-  if (colourAmountSliderElement.value > 10 || colourAmountSliderElement < 0) return; 
+  if (colourAmountSliderElement.value > 10 || colourAmountSliderElement.value < 0) return; 
 
   colourAmount = colourAmountSliderElement.value;
   localStorage.setItem('amount', String(colourAmount));
