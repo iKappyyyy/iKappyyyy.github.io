@@ -2,7 +2,7 @@ let colourAmount = Number(localStorage.getItem('amount')) || 5;
 let copyType = localStorage.getItem('type') || 'hex';
 let colours = generateHTML(copyType, colourAmount, JSON.parse(localStorage.getItem('colours'))) || generateHTML(copyType, colourAmount);
 
-if (colours.length !== 10) {
+if (colours.length !== 10 || Array.isArray(colours[0])) {
   colours = generateHTML(copyType, colourAmount);
 }
 
