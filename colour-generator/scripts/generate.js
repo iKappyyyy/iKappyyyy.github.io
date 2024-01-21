@@ -5,6 +5,10 @@ document.querySelector('.js-generate-button').addEventListener('click', () => {
   colours = generateHTML(copyType, colourAmount);
 });
 
+if (colours.length !== 10) {
+  colours = generateHTML(copyType, colourAmount);
+}
+
 const colourAmountSliderElement = document.querySelector('.js-range');
 const rangeTitleElement = document.querySelector('.js-range-title');
 colourAmountSliderElement.value = colourAmount;
