@@ -4,6 +4,7 @@ let colours = JSON.parse(localStorage.getItem('colours')) || generateColours();
 if (colours.length !== 10 || !(Array.isArray(colours[0]))) {
   colours = generateColours();
 }
+if (colourAmount > 10 || colourAmount < 0) colourAmount = 5;
 
 generateHTML(copyType, colourAmount, colours);
 
