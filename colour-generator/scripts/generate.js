@@ -78,7 +78,7 @@ function handleColoursAndTooltips(colours, copyType, colourAmount) {
       const item = gridItems[itemNumber];
 
       console.log(colours);
-      console.log(colours[row][col];
+      console.log(colours[row][col]);
       break;
       item.style.backgroundColor = colours[row][col].hex;
 
