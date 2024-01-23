@@ -1,14 +1,15 @@
 let colourAmount = Number(localStorage.getItem('amount')) || 5;
 let copyType = localStorage.getItem('type') || 'hex';
-let colours = generateHTML(copyType, colourAmount, JSON.parse(localStorage.getItem('colours'))) || generateHTML(copyType, colourAmount);
-console.log(colours);
+let colours = JSON.parse(localStorage.getItem('colours')) || generateColours();
 if (colours.length !== 10 || !(Array.isArray(colours[0]))) {
-  colours = generateHTML(copyType, colourAmount);
-  console.log('meow');
+  colours = generateColours();
 }
 
+generateHTML(copyType, colourAmount, colours);
+
 document.querySelector('.js-generate-button').addEventListener('click', () => {
-  colours = generateHTML(copyType, colourAmount);
+  colours = generateColours();
+  generateHTML(copyType, colourAmount, colours);
 });
 
 const colourAmountSliderElement = document.querySelector('.js-range');
@@ -22,14 +23,10 @@ colourAmountSliderElement.addEventListener('input', () => {
   localStorage.setItem('amount', String(colourAmount));
   rangeTitleElement.innerHTML = `Colours: ${colourAmount}`;
   document.querySelector('.js-colour-grid').style.gridTemplateColumns = `repeat(${colourAmount}, 1fr)`;
-  colours = generateHTML(copyType, colourAmount, colours);
+  generateHTML(copyType, colourAmount, colours);
 });
 
-function generateHTML(copyType, colourAmount, colours=null) {
-  if (!colours) {
-    colours = generateColours();
-  }
-
+function generateHTML(copyType, colourAmount, colours) {
   let gridHTML = '';
   for (let i = 0; i < colourAmount * colourAmount; i++) {
     gridHTML += `
@@ -42,8 +39,6 @@ function generateHTML(copyType, colourAmount, colours=null) {
 
   document.querySelector('.js-colour-grid').innerHTML = gridHTML;
   handleColoursAndTooltips(colours, copyType, colourAmount);
-  localStorage.setItem('colours', JSON.stringify(colours));
-  return colours;
 }
 
 function getRandomColour() {
@@ -66,6 +61,8 @@ function generateColours() {
     }
     newColours.push(row);
   }
+
+  localStorage.setItem('colours', JSON.stringify(newColours));
   return newColours;
 }
 
@@ -77,9 +74,6 @@ function handleColoursAndTooltips(colours, copyType, colourAmount) {
     for (let col = 0; col < colourAmount; col++) {
       const item = gridItems[itemNumber];
 
-      console.log(colours);
-      console.log(colours[row][col]);
-      break;
       item.style.backgroundColor = colours[row][col].hex;
 
       item.addEventListener('contextmenu', event => {
