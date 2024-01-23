@@ -77,6 +77,9 @@ function handleColoursAndTooltips(colours, copyType, colourAmount) {
     for (let col = 0; col < colourAmount; col++) {
       const item = gridItems[itemNumber];
 
+      console.log(colours);
+      console.log(colours[row][col];
+      break;
       item.style.backgroundColor = colours[row][col].hex;
 
       item.addEventListener('contextmenu', event => {
