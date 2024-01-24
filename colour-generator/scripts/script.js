@@ -41,8 +41,8 @@ typeToggleElement.addEventListener('click', () => {
     document.querySelector('.js-type-toggle-title').innerHTML = 'Copy RGB';
   }
   localStorage.setItem('type', copyType);
-  colours = generateHTML(copyType, colourAmount, colours);
-  loadSavedColours(savedColours, copyType)
+  generateHTML(copyType, colourAmount, colours);
+  loadSavedColours(savedColours, copyType);
 });
 
 document.querySelector('.js-save-button').addEventListener('click', () => {
