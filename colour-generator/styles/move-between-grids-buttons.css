@@ -1,0 +1,27 @@
+.back-button, .after-button {
+  padding: 12px 30px;
+  font-family: Nunito, Arial;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+}
+
+.after-button {
+  background-color: rgb(91, 139, 18);
+  color: white;
+}
+
+.back-button:hover {
+  background-color: rgb(182, 182, 182);
+}
+
+.after-button:hover {
+  background-color: rgb(65, 102, 9);
+  color: white;
+}
+
+.back-button:active, .after-button:active {
+  opacity: 0.8;
+}
