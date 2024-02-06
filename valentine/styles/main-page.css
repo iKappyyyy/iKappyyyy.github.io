@@ -1,5 +1,6 @@
 body {
   background-color: pink;
+  user-select: none;
 }
 
 h1 {
