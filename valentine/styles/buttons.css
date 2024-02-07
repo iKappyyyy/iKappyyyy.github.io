@@ -30,10 +30,6 @@
   background-color: rgb(120, 0, 0);
 }
 
-.yes-button:active{
+.yes-button:active, .no-button:active {
   opacity: 0.8;
-}
-
-.no-button:active {
-  opacity: 0.5;
 }
