@@ -44,7 +44,7 @@ function updateButtons() {
     if (!backButton.classList.contains('back-button-done')) {
       backButton.classList.add('back-button-done');
     }
-    if (afterButton.classList.contains('after-button-done')) {
+    if (afterButton.classList.contains('after-button-done') && savedGrids.length != 1) {
       afterButton.classList.remove('after-button-done');
     }
   } else if (coloursIndex >= savedGrids.length - 1) {
