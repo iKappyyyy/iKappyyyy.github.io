@@ -3,7 +3,6 @@ const helpText = document.querySelector('.js-help-text');
 let isHidden = true;
 
 helpText.innerHTML = `
-<br>
 <span class="help-title">How To Use:</span>
 <br>
 bro IMAGINE needing help for a website as<br>
