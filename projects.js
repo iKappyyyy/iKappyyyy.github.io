@@ -1,12 +1,13 @@
 const projectsInfo = [
+  { folder: 'cutesy-ask-out', file: 'question.html', title: 'Will you go out with me?'},
   { folder: 'rock-paper-scissors', file: 'rps.html', title: 'Rock Paper Scissors!' },
   { folder: 'todo-list', file: 'todo-list.html', title: 'Todo List' },
   { folder: 'youtube-recreation', file: 'youtube.html', title: 'YouTube!' },
   { folder: 'stopwatch', file: 'stopwatch.html', title: 'Stopwatch' },
   { folder: 'tic-tac-toe', file: 'tic-tac-toe.html', title: 'Tic Tac Toe!' },
   { folder: 'colour-generator', file: 'generator.html', title: 'Colour Generator!' },
-  { folder: 'cutesy-ask-out', file: 'question.html', title: 'Will you go out with me?'},
-  { folder: 'valentine', file: 'index.html', title: 'Will you be my valentine?' }
+  { folder: 'valentine', file: 'index.html', title: 'Will you be my valentine?' },
+  { folder: 'countdown', file: 'index.html', title: 'Countdown!' }
 ];
 const projectsElement = document.querySelector('.js-projects');
 
