@@ -4,13 +4,33 @@ body {
 }
 
 .projects-grid-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
+  display: grid;
+  place-items: center;
+  height: 98vh;
   opacity: 1;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media ((min-width: 1350.1px) and (max-width: 1800px)) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media ((min-width: 900.1px) and (max-width: 1350px)) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media ((min-width: 0px) and (max-width: 900px)) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
 }
 
 
@@ -24,10 +44,6 @@ body {
   padding-right: 15px;
   margin-right: 5px;
   margin-left: 5px;
-}
-
-.row {
-  display: flex;
 }
 
 .project {
