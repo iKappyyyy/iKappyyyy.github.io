@@ -12,15 +12,9 @@ const projectsInfo = [
 const projectsElement = document.querySelector('.js-projects');
 
 let projectsHTML = '';
-let currentRow = '';
 let i = 0
 for (i = 0; i < projectsInfo.length; i++) {
-  if (i % 3 === 0) {
-    currentRow += '</div>';
-    projectsHTML += currentRow;
-    currentRow = '<div class="row">';
-  }
-  currentRow += `
+  projectsHTML += `
   <div class="js-project project">
     <div class="project-title">
       ${projectsInfo[i].title}
@@ -29,21 +23,7 @@ for (i = 0; i < projectsInfo.length; i++) {
   </div>
   `
 }
-while (i % 3 !== 0) {
-  currentRow += `
-  <div class="project">
-    <div class="project-title">
-      To Be Done.
-    </div>
-    <img class="project-thumbnail" src="thumbnail.png">
-  </div>
-  `
-  i++;
-}
 
-currentRow += '</div>';
-projectsHTML += currentRow;
-currentRow = '';
 projectsElement.innerHTML = projectsHTML;
 const projects = document.querySelectorAll('.js-project');
 projectsInfo.forEach((projectObject, i) => {
