@@ -7,7 +7,8 @@ const projectsInfo = [
   { folder: 'tic-tac-toe', file: 'tic-tac-toe.html', title: 'Tic Tac Toe!' },
   { folder: 'colour-generator', file: 'generator.html', title: 'Colour Generator!' },
   { folder: 'valentine', file: 'index.html', title: 'Will you be my valentine?' },
-  { folder: 'countdown', file: 'index.html', title: 'Countdown!' }
+  { folder: 'countdown', file: 'index.html', title: 'Countdown!' },
+  { folder: 'test', file: 'index.html', title: 'Testing!' }
 ];
 const projectsElement = document.querySelector('.js-projects');
 
