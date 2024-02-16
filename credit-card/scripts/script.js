@@ -27,7 +27,7 @@ const textInputs = [document.querySelector('.js-card-name'), document.querySelec
 
 textInputs.forEach(input => {
   input.addEventListener('input', (event) => {
-    const value = event.target.value.replace(/[^A-Za-z]/g, ''); // Remove non-alphabetic characters
+    const value = event.target.value.replace(/[^A-Za-z\s]/g, ''); // Remove non-alphabetic characters
     event.target.value = value;
   });
 });
