@@ -8,7 +8,8 @@ const projectsInfo = [
   { folder: 'colour-generator', file: 'generator.html', title: 'Colour Generator!' },
   { folder: 'valentine', file: 'index.html', title: 'Will you be my valentine?' },
   { folder: 'countdown', file: 'index.html', title: 'Countdown!' },
-  { folder: 'test', file: 'index.html', title: 'Testing!' }
+  { folder: 'test', file: 'index.html', title: 'Testing!' },
+  { folder: 'credit-card', file: 'index.html', title: 'Credit Card!' }
 ];
 const projectsElement = document.querySelector('.js-projects');
 
