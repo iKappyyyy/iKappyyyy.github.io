@@ -1,5 +1,5 @@
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
-const eventEnds = dayjs('2024-02-18');
+const eventEnds = dayjs('2024-08-13');
 const countdown = document.querySelector('.js-countdown');
 let intervalID = null;
 
