@@ -6,13 +6,6 @@ const billText = document.querySelector('.js-bill-text');
 const tipText = document.querySelector('.js-tip-text');
 const totalText = document.querySelector('.js-total-text');
 
-[billInput, tipInput].forEach(input => {
-  input.addEventListener('input', event => {
-    const newValue = event.target.value.replace(/\D/g, '');
-    event.target.value = newValue;
-  });
-});
-
 billInput.addEventListener('keydown', event => {
   if (event.key === 'Enter') tipInput.focus();
 });
