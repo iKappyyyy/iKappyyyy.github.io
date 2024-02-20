@@ -1,4 +1,14 @@
 const inputs = document.querySelectorAll('.js-card-number');
+const cardName = document.querySelector('.js-card-name');
+const cardOwner = document.querySelector('.js-card-owner');
+
+cardName.addEventListener('keydown', event => {
+  if (event.key === 'Enter') inputs[0].focus();
+});
+
+cardOwner.addEventListener('keydown', event => {
+  if (event.key === 'Enter') cardOwner.blur();
+});
 
 inputs.forEach((input, index) => {
   input.addEventListener('input', (event) => {
@@ -17,6 +27,7 @@ inputs.forEach((input, index) => {
   });
   
   input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') cardOwner.focus();
     if (!/^\d+$/.test(event.key) && event.key !== 'Backspace' && event.key !== 'Delete' && event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') {
       event.preventDefault();
     }
