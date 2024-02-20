@@ -10,7 +10,7 @@ const projectsInfo = [
   { folder: 'countdown', file: 'index.html', title: 'Countdown!' },
   { folder: 'test', file: 'index.html', title: 'Testing!' },
   { folder: 'credit-card', file: 'index.html', title: 'Credit Card!' },
-  { folder: 'tip-calculator', file: 'index.html', title: 'Tip Calculator! }
+  { folder: 'tip-calculator', file: 'index.html', title: 'Tip Calculator!' }
 ];
 const projectsElement = document.querySelector('.js-projects');
 
