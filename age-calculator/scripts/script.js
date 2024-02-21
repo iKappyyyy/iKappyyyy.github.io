@@ -11,6 +11,7 @@ dateInput.addEventListener('keydown', event => {
 });
 
 function getAge(dateOfBirthValue) {
+  if (!dateOfBirthValue) return 69;
   const dateOfBirth = new Date(dateOfBirthValue);
   const today = new Date();
 
