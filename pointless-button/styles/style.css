@@ -1,0 +1,30 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("../images/background.gif");
+  background-position: center;
+  background-size: cover;
+  backdrop-filter: blur(10px);
+  margin: 0;
+}
+
+button {
+  font-family: Arial;
+  font-weight: 700;
+  font-size: 2em;
+  color: white;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 5px 5px 0 5px rgb(182, 182, 182);
+  background: rgb(180, 36, 36);
+}
+
+button:active {
+  margin: 15px 0 0 15px;
+  box-shadow: none;
+}
