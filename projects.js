@@ -11,7 +11,8 @@ const projectsInfo = [
   { folder: 'test', file: 'index.html', title: 'Testing!' },
   { folder: 'credit-card', file: 'index.html', title: 'Credit Card!' },
   { folder: 'tip-calculator', file: 'index.html', title: 'Tip Calculator!' },
-  { folder: 'age-calculator', file: 'index.html', title: 'Age Calculator!' }
+  { folder: 'age-calculator', file: 'index.html', title: 'Age Calculator!' },
+  { folder: 'pointless-button', file: 'index.html', title: 'Pointless Button' }
 ];
 const projectsElement = document.querySelector('.js-projects');
 
