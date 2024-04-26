@@ -20,11 +20,16 @@ button {
   height: 200px;
   border-radius: 50%;
   border: none;
-  box-shadow: 5px 5px 0 5px rgb(182, 182, 182);
+  box-shadow: 5px 5px 0 5px rgb(136, 136, 136);
   background: rgb(180, 36, 36);
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgb(124, 24, 24);
 }
 
 button:active {
-  margin: 15px 0 0 15px;
+  margin: 17px 0 0 17px;
   box-shadow: none;
 }
