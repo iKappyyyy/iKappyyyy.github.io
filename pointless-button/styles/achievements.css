@@ -1,0 +1,135 @@
+.achievement-button {
+  position: absolute;
+  top: 7.5px;
+  right: 5px;
+  font-size: 2em;
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+  background: rgb(255, 255, 255);
+  color: var(--achievement-gold);
+  display: grid;
+  place-items: center;
+  z-index: 100;
+}
+
+.achievement-button:hover {
+  background: rgb(211, 211, 211);
+  color: var(--achievement-gold-hover);
+}
+
+.achievement-button:active {
+  opacity: 0.8;
+}
+
+.achievement-menu {
+  width: 250px;
+  height: 80%;
+  position: absolute;
+  top: 90px;
+  right: -270px;
+  background: white;
+  border: 3px solid black;
+  border-radius: 20px 0 0 20px;
+  font-family: "Chakra Petch", sans-serif;
+  overflow: hidden;
+  transition: right 0.5s;
+  text-align: center;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.achievement {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 5px;
+  bottom: -120px;
+  height: 75px;
+  width: 350px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 3px solid black;
+  background: white;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  overflow: hidden;
+  animation-play-state: paused;
+  animation-name: achievement-pop;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.achievement p {
+  flex-grow: 1;
+  color: black;
+}
+
+.fa-star {
+  font-size: 2em;
+  margin: 5px;
+  color: var(--achievement-gold);
+}
+
+.achievement-title {
+  color: black;
+  display: block;
+  color: var(--achievement-gold);
+  font-size: 1.5em;
+}
+
+.achievement-name::before {
+  content: "| ";
+}
+
+.achievement-name::after {
+  content: " | - ";
+}
+
+.achievement-slot .achievement-name {
+  display: block;
+}
+
+.achievement-slot .achievement-name::after {
+  content: " |"
+}
+
+.achievement-slot {
+  border: 2px solid black;
+  width: 225px;
+  margin: 5px;
+  height: 50px;
+  padding: 5px;
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+
+.achievement-slot:first-of-type {
+  border-top-left-radius: 15px;
+}
+
+@keyframes achievement-pop {
+  0% {
+    bottom: -120px;
+  }
+
+  10% {
+    bottom: 5px;
+  }
+
+  90% {
+    bottom: 5px;
+  }
+  
+  100% {
+    bottom: -120px;
+  }
+}
