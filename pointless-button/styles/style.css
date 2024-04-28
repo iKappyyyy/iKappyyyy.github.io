@@ -1,0 +1,49 @@
+:root {
+  --achievement-gold: rgb(189, 170, 66);
+  --achievement-gold-hover: rgb(116, 104, 40);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("../images/background.gif");
+  background-position: center;
+  background-size: cover;
+  backdrop-filter: blur(10px);
+  margin: 0;
+  user-select: none;
+} 
+
+h1 {
+  position: absolute;
+  color: white;
+  font-family: "Chakra Petch", sans-serif;
+  top: 75px;
+  text-align: center;
+}
+
+.pointless-button {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  font-size: 2.5em;
+  color: white;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 5px 5px 0 5px rgb(136, 136, 136);
+  background: rgb(180, 36, 36);
+  cursor: pointer;
+}
+
+.pointless-button:hover {
+  background: rgb(124, 24, 24);
+}
+
+.pointless-button:active {
+  margin: 17px 0 0 17px;
+  box-shadow: none;
+}
