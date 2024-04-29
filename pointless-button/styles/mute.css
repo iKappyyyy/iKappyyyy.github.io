@@ -21,3 +21,7 @@
 .mute-button:active {
   opacity: 0.8;
 }
+
+.fa-volume-xmark {
+  margin-right: 4px;
+}
