@@ -11,25 +11,22 @@ export function toggleMenu(toggled) {
 }
 
 export function achievementReached(unobtainedAchievements, clicks) {
+  if (!unobtainedAchievements.length) return false; // if unobtained achievement list is empty
   return unobtainedAchievements[0].clicksRequirement <= clicks;
 }
 
 export function playAchievementReachedAnimation(unobtainedAchievements) {
-  const achievementElement = document.querySelector('.js-achievement');
-  achievementElement.innerHTML = `
-  <i class="fa-solid fa-star"></i>
-  <p class="js-achievement-info"></p>
-  `;
+  const achievementElement = createAchievementElement();
+  const achievementInfoElement = createAchievementElementInnerHtml(achievementElement);
 
-  const achievementInfoElement = document.querySelector('.js-achievement-info');
   const achievementReached = unobtainedAchievements[0];
-  achievementInfoElement.innerHTML = `<span class="achievement-title">ACHIEVEMENT!</span><span class="achievement-name">${achievementReached.name}</span>${achievementReached.description}`;
-  achievementElement.style.animationPlayState = 'running';
-  achievementElement.style.display = 'flex';
+  achievementInfoElement.innerHTML = `
+  <span class="achievement-title">ACHIEVEMENT!</span>
+  <span class="achievement-name">${achievementReached.name}</span>
+  ${achievementReached.description}`;
+
   setTimeout(() => {
-    achievementElement.style.animationPlayState = 'paused';
-    achievementInfoElement.innerHTML = '';
-    achievementElement.style.display = 'none';
+    achievementElement.remove();
   }, 5000);
 }
 
@@ -53,4 +50,24 @@ export function loadObtainedAchievements(obtainedAchievements) {
   });
 
   menu.innerHTML = html;
+}
+
+function createAchievementElement() {
+  const achievementElement = document.createElement('div');
+  achievementElement.classList.add('achievement');
+  achievementElement.classList.add('js-achievement');
+
+  document.body.appendChild(achievementElement);
+  return achievementElement;
+}
+
+function createAchievementElementInnerHtml(achievementElement) {
+  const achievementInfoElement = document.createElement('p');
+
+  achievementElement.innerHTML = `
+  <i class="fa-solid fa-star"></i>
+  `;
+
+  achievementElement.appendChild(achievementInfoElement);
+  return achievementInfoElement;
 }

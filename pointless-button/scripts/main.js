@@ -1,4 +1,4 @@
-import playSound from "./playSound.js";
+import { playAchievementSound, playClickSound } from "./sounds.js";
 import { unobtainedAchievements, obtainedAchievements } from "./data/achievementLists.js";
 import { changeCounterValue, updateLocalStorageClicks } from "./updateCounter.js";
 import { toggleMenu, achievementReached, updateAchievementLists, playAchievementReachedAnimation, loadObtainedAchievements } from "./achievements.js";
@@ -17,22 +17,15 @@ loadObtainedAchievements(obtainedAchievements); // load obtained achievements at
 changeMuteIcon(muteButton, muted); // load mute icon at the start of program
 
 button.addEventListener('click', () => {
-  if (!muted) {
-    playSound();
-  }
+  if (!muted) playClickSound();
   clicks++;
   changeCounterValue(clicks);
   updateLocalStorageClicks(clicks);
 
   // achievement stuff
-  if (unobtainedAchievements.length > 0 && achievementReached(unobtainedAchievements, clicks)) {
-    if (!animationRunning) {
-      animationRunning = true;
-      playAchievementReachedAnimation(unobtainedAchievements);
-      setTimeout(() => {
-        animationRunning = false;
-      }, 5000);
-    }
+  if (achievementReached(unobtainedAchievements, clicks)) {
+    if (!muted) playAchievementSound();
+    playAchievementReachedAnimation(unobtainedAchievements);
     updateAchievementLists(unobtainedAchievements, obtainedAchievements);
     loadObtainedAchievements(obtainedAchievements);
   } 
