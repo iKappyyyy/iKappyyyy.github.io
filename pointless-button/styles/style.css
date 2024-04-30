@@ -19,6 +19,7 @@ body {
   backdrop-filter: blur(10px);
   margin: 0;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 h1 {
