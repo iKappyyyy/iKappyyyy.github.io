@@ -13,7 +13,7 @@ body {
   align-items: center;
   height: 100vh;
   overflow: hidden;
-  background-image: url("../images/background.gif");
+  background-image: url("../images/background-1.gif");
   background-position: center;
   background-size: cover;
   backdrop-filter: blur(10px);

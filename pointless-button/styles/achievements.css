@@ -24,7 +24,7 @@
   opacity: 0.8;
 }
 
-.achievement-menu {
+.achievements-menu {
   width: 250px;
   height: 80%;
   position: absolute;
@@ -45,15 +45,8 @@
   overflow-y: scroll;
 }
 
-.achievement-menu::-webkit-scrollbar {
+.achievements-menu::-webkit-scrollbar {
   display: none;
-}
-
-.achievement-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 .achievement {

@@ -1,7 +1,7 @@
-export function toggleMenu(toggled) {
-  const menu = document.querySelector('.achievement-menu');
+export function toggleAchievementMenu(achievementMenuToggled) {
+  const menu = document.querySelector('.js-achievements-menu');
 
-  if (toggled) {
+  if (achievementMenuToggled) {
     menu.style.right = '-270px';
     return false;
   } else {
@@ -38,7 +38,7 @@ export function updateAchievementLists(unobtainedAchievements, obtainedAchieveme
 }
 
 export function loadObtainedAchievements(obtainedAchievements) {
-  const menu = document.querySelector('.achievement-menu');
+  const menu = document.querySelector('.achievements-menu');
 
   let html = '';
   obtainedAchievements.forEach(achievement => {
