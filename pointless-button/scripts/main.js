@@ -1,22 +1,27 @@
-import { playAchievementSound, playClickSound } from "./sounds.js";
+import { playAchievementSound, playBackgroundSound, playClickSound } from "./sounds.js";
 import { unobtainedAchievements, obtainedAchievements } from "./data/achievementLists.js";
+import { unobtainedBackgrounds, obtainedBackgrounds } from "./data/backgroundsLists.js";
 import { changeCounterValue, updateLocalStorageClicks } from "./updateCounter.js";
 import { toggleAchievementMenu, achievementReached, updateAchievementLists, playAchievementReachedAnimation, loadObtainedAchievements } from "./achievements.js";
-import { toggleBackgroundsMenu } from "./backgrounds.js";
+import { toggleBackgroundsMenu, loadObtainedBackgrounds, backgroundReached, playBackgroundReachedAnimation, updateBackgroundsLists, changeBackground } from "./backgrounds.js";
 import { changeMuteIcon, saveMutedToLocalStorage } from "./mute.js";
 
 const button = document.querySelector('.js-pointless-button');
 const achievementButton = document.querySelector('.js-achievement-button');
 const backgroundButton = document.querySelector('.js-background-button');
 const muteButton = document.querySelector('.js-mute-button');
+const backgroundImage = localStorage.getItem('backgroundImage') || './images/background-1.gif';
 let clicks = Number(localStorage.getItem('clicks')) || 0;
 let audioMuted = Number(localStorage.getItem('muted')) || 0;
 let achievementMenuToggled = false;
 let backgroundsMenuToggled = false;
+let backgroundAlreadyReached = false;
 
 changeCounterValue(clicks); // change counter value at the start of program
 loadObtainedAchievements(obtainedAchievements); // load obtained achievements at the start of program
+loadObtainedBackgrounds(obtainedBackgrounds); // load obtained backgrounds at the start of program
 changeMuteIcon(muteButton, audioMuted); // load mute icon at the start of program
+changeBackground(backgroundImage); // load background at the start of program
 
 button.addEventListener('click', () => {
   if (!audioMuted) playClickSound();
@@ -30,7 +35,19 @@ button.addEventListener('click', () => {
     playAchievementReachedAnimation(unobtainedAchievements);
     updateAchievementLists(unobtainedAchievements, obtainedAchievements);
     loadObtainedAchievements(obtainedAchievements);
-  } 
+  }
+
+  // background stuff
+  if (backgroundReached(unobtainedBackgrounds, clicks) && !backgroundAlreadyReached) {
+    backgroundAlreadyReached = true;
+    setTimeout(() => {
+      if (!audioMuted) playBackgroundSound();
+      playBackgroundReachedAnimation(obtainedBackgrounds);
+      updateBackgroundsLists(unobtainedBackgrounds, obtainedBackgrounds);
+      loadObtainedBackgrounds(obtainedBackgrounds);
+      backgroundAlreadyReached = false;
+    }, 5000);
+  }
 });
 
 achievementButton.addEventListener('click', () => {

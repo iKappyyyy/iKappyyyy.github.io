@@ -54,7 +54,6 @@
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  bottom: 5px;
   bottom: -120px;
   height: 75px;
   width: 350px;
@@ -75,17 +74,17 @@
   color: black;
 }
 
-.fa-star {
+.achievement .fa-star {
   font-size: 2em;
   margin: 5px;
   color: var(--achievement-gold);
 }
 
 .achievement-title {
-  color: black;
   display: block;
   color: var(--achievement-gold);
   font-size: 1.5em;
+  font-style: italic;
 }
 
 .achievement-name::before {

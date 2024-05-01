@@ -11,7 +11,7 @@ export function toggleAchievementMenu(achievementMenuToggled) {
 }
 
 export function achievementReached(unobtainedAchievements, clicks) {
-  if (!unobtainedAchievements.length) return false; // if unobtained achievement list is empty
+  if (!unobtainedAchievements.length) return false; // if unobtained achievements list is empty
   return unobtainedAchievements[0].clicksRequirement <= clicks;
 }
 
@@ -38,7 +38,7 @@ export function updateAchievementLists(unobtainedAchievements, obtainedAchieveme
 }
 
 export function loadObtainedAchievements(obtainedAchievements) {
-  const menu = document.querySelector('.achievements-menu');
+  const menu = document.querySelector('.js-achievements-menu');
 
   let html = '';
   obtainedAchievements.forEach(achievement => {
@@ -55,7 +55,6 @@ export function loadObtainedAchievements(obtainedAchievements) {
 function createAchievementElement() {
   const achievementElement = document.createElement('div');
   achievementElement.classList.add('achievement');
-  achievementElement.classList.add('js-achievement');
 
   document.body.appendChild(achievementElement);
   return achievementElement;

@@ -46,3 +46,115 @@
 .backgrounds-menu::-webkit-scrollbar {
   display: none;
 }
+
+.background-slot .background-name {
+  font-style: italic;
+  color: white;
+  font-size: 1.5em;
+}
+
+.background-slot {
+  border: 2px solid black;
+  width: 225px;
+  margin: 5px;
+  height: 75px;
+  padding: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  flex-shrink: 0;
+  overflow: hidden;
+  /* background-image: url("../images/background-1.gif"); */
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  color: rgb(200, 200, 200);
+  text-shadow: 1px 1px 0px black;
+}
+
+.background-slot:hover {
+  opacity: 0.9;
+}
+
+.background-slot:active {
+  opacity: 0.8;
+}
+
+.background-slot:first-of-type {
+  border-top-left-radius: 15px;
+}
+
+.background-slot:last-of-type {
+  border-bottom-left-radius: 15px;
+}
+
+.background {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: -120px;
+  height: 75px;
+  width: 350px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 3px solid black;
+  background: white;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  overflow: hidden;
+  animation-name: background-pop;
+  animation-duration: 10s;
+}
+
+.background p {
+  flex-grow: 1;
+  color: black;
+}
+
+.background .fa-star {
+  font-size: 2em;
+  margin: 5px;
+  color: green;
+}
+
+.background-title {
+  display: block;
+  color: green;
+  font-size: 1.5em;
+  font-style: italic;
+}
+
+.background .background-name {
+  color: black;
+}
+
+.background .background-name::before {
+  content: "| ";
+}
+
+.background .background-name::after {
+  content: " | - ";
+}
+
+@keyframes background-pop {
+  0% {
+    bottom: -120px;
+  }
+
+  5% {
+    bottom: 5px;
+  }
+
+  95% {
+    bottom: 5px;
+  }
+  
+  100% {
+    bottom: -120px;
+  }
+}
