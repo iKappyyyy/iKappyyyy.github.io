@@ -17,6 +17,10 @@ let achievementMenuToggled = false;
 let backgroundsMenuToggled = false;
 let backgroundAlreadyReached = false;
 
+console.log(obtainedBackgrounds);
+console.log('--------------------');
+console.log(unobtainedBackgrounds);
+
 changeCounterValue(clicks); // change counter value at the start of program
 loadObtainedAchievements(obtainedAchievements); // load obtained achievements at the start of program
 loadObtainedBackgrounds(obtainedBackgrounds); // load obtained backgrounds at the start of program
