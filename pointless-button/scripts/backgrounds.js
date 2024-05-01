@@ -15,15 +15,15 @@ export function backgroundReached(unobtainedBackgrounds, clicks) {
   return unobtainedBackgrounds[0].clicksRequirement <= clicks;
 }
 
-export function playBackgroundReachedAnimation(obtainedBackgrounds) {
+export function playBackgroundReachedAnimation(unobtainedBackgrounds, obtainedBackgroundsLength) {
   const backgroundElement = createBackgroundElement();
   const backgroundInfoElement = createBackgroundElementInnerHtml(backgroundElement);
 
-  const backgroundReached = obtainedBackgrounds[obtainedBackgrounds.length - 1];
+  const backgroundReached = unobtainedBackgrounds[0];
   console.log(backgroundReached);
   backgroundInfoElement.innerHTML = `
   <span class="background-title">BACKGROUND!</span>
-  <span class="background-name">Background ${obtainedBackgrounds.length + 1}</span>
+  <span class="background-name">Background ${obtainedBackgroundsLength + 1}</span>
   ${backgroundReached.description}`;
 
   setTimeout(() => {

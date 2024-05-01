@@ -15,11 +15,8 @@ let clicks = Number(localStorage.getItem('clicks')) || 0;
 let audioMuted = Number(localStorage.getItem('muted')) || 0;
 let achievementMenuToggled = false;
 let backgroundsMenuToggled = false;
-let backgroundAlreadyReached = false;
-
-console.log(obtainedBackgrounds);
-console.log('--------------------');
-console.log(unobtainedBackgrounds);
+let animationActive = false;
+let backgroundAnimationId = 0;
 
 changeCounterValue(clicks); // change counter value at the start of program
 loadObtainedAchievements(obtainedAchievements); // load obtained achievements at the start of program
@@ -36,21 +33,19 @@ button.addEventListener('click', () => {
   // achievement stuff
   if (achievementReached(unobtainedAchievements, clicks)) {
     if (!audioMuted) playAchievementSound();
+    animationActive = true;
     playAchievementReachedAnimation(unobtainedAchievements);
+    setTimeout(() => { animationActive = false; }, 5000);
     updateAchievementLists(unobtainedAchievements, obtainedAchievements);
     loadObtainedAchievements(obtainedAchievements);
   }
 
   // background stuff
-  if (backgroundReached(unobtainedBackgrounds, clicks) && !backgroundAlreadyReached) {
-    backgroundAlreadyReached = true;
-    setTimeout(() => {
-      if (!audioMuted) playBackgroundSound();
-      playBackgroundReachedAnimation(obtainedBackgrounds);
-      updateBackgroundsLists(unobtainedBackgrounds, obtainedBackgrounds);
-      loadObtainedBackgrounds(obtainedBackgrounds);
-      backgroundAlreadyReached = false;
-    }, 5000);
+  if (backgroundReached(unobtainedBackgrounds, clicks) && !animationActive) {
+    if (!audioMuted) playBackgroundSound();
+    playBackgroundReachedAnimation(unobtainedBackgrounds, obtainedBackgrounds.length);
+    updateBackgroundsLists(unobtainedBackgrounds, obtainedBackgrounds);
+    loadObtainedBackgrounds(obtainedBackgrounds);
   }
 });
 
