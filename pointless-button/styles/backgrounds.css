@@ -89,6 +89,7 @@
 
 .background-slot:last-of-type {
   border-bottom-left-radius: 15px;
+  margin-bottom: 100px;
 }
 
 .background {
@@ -107,8 +108,9 @@
   font-weight: 600;
   text-align: center;
   overflow: hidden;
-  animation-name: background-pop;
-  animation-duration: 10s;
+  /* animation-name: background-pop;
+  animation-duration: 10s; */
+  transition: bottom 500ms;
 }
 
 .background p {
@@ -141,7 +143,7 @@
   content: " | - ";
 }
 
-@keyframes background-pop {
+/* @keyframes background-pop {
   0% {
     bottom: -120px;
   }
@@ -157,4 +159,4 @@
   100% {
     bottom: -120px;
   }
-}
+} */

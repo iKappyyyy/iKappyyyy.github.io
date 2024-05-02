@@ -2,9 +2,10 @@ import { playAchievementSound, playBackgroundSound, playClickSound } from "./sou
 import { unobtainedAchievements, obtainedAchievements } from "./data/achievementLists.js";
 import { unobtainedBackgrounds, obtainedBackgrounds } from "./data/backgroundsLists.js";
 import { changeCounterValue, updateLocalStorageClicks } from "./updateCounter.js";
-import { toggleAchievementMenu, achievementReached, updateAchievementLists, playAchievementReachedAnimation, loadObtainedAchievements } from "./achievements.js";
-import { toggleBackgroundsMenu, loadObtainedBackgrounds, backgroundReached, playBackgroundReachedAnimation, updateBackgroundsLists, changeBackground } from "./backgrounds.js";
+import { toggleAchievementMenu, achievementReached, updateAchievementLists, createAchievementPopUpElement, loadObtainedAchievements } from "./achievements.js";
+import { toggleBackgroundsMenu, loadObtainedBackgrounds, backgroundReached, updateBackgroundsLists, changeBackground, createBackgroundPopUpElement } from "./backgrounds.js";
 import { changeMuteIcon, saveMutedToLocalStorage } from "./mute.js";
+import { achievementPopUpDurationMs, backgroundPopUpDurationMs, playPopUpAnimation, popUpElementHeightPx } from "./animations.js";
 
 const button = document.querySelector('.js-pointless-button');
 const achievementButton = document.querySelector('.js-achievement-button');
@@ -15,8 +16,7 @@ let clicks = Number(localStorage.getItem('clicks')) || 0;
 let audioMuted = Number(localStorage.getItem('muted')) || 0;
 let achievementMenuToggled = false;
 let backgroundsMenuToggled = false;
-let animationActive = false;
-let backgroundAnimationId = 0;
+let groundLevel = 5;
 
 changeCounterValue(clicks); // change counter value at the start of program
 loadObtainedAchievements(obtainedAchievements); // load obtained achievements at the start of program
@@ -30,22 +30,28 @@ button.addEventListener('click', () => {
   changeCounterValue(clicks);
   updateLocalStorageClicks(clicks);
 
+  // background stuff
+  if (backgroundReached(unobtainedBackgrounds, clicks)) {
+    if (!audioMuted) playBackgroundSound();
+    playPopUpAnimation(groundLevel, backgroundPopUpDurationMs, createBackgroundPopUpElement(unobtainedBackgrounds, obtainedBackgrounds.length));
+    groundLevel += popUpElementHeightPx;
+    setTimeout(() => {
+      groundLevel -= popUpElementHeightPx;
+    }, backgroundPopUpDurationMs);
+    updateBackgroundsLists(unobtainedBackgrounds, obtainedBackgrounds);
+    loadObtainedBackgrounds(obtainedBackgrounds);
+  }
+
   // achievement stuff
   if (achievementReached(unobtainedAchievements, clicks)) {
     if (!audioMuted) playAchievementSound();
-    animationActive = true;
-    playAchievementReachedAnimation(unobtainedAchievements);
-    setTimeout(() => { animationActive = false; }, 5000);
+    playPopUpAnimation(groundLevel, achievementPopUpDurationMs, createAchievementPopUpElement(unobtainedAchievements));
+    groundLevel += popUpElementHeightPx;
+    setTimeout(() => {
+      groundLevel -= popUpElementHeightPx;
+    }, achievementPopUpDurationMs);
     updateAchievementLists(unobtainedAchievements, obtainedAchievements);
     loadObtainedAchievements(obtainedAchievements);
-  }
-
-  // background stuff
-  if (backgroundReached(unobtainedBackgrounds, clicks) && !animationActive) {
-    if (!audioMuted) playBackgroundSound();
-    playBackgroundReachedAnimation(unobtainedBackgrounds, obtainedBackgrounds.length);
-    updateBackgroundsLists(unobtainedBackgrounds, obtainedBackgrounds);
-    loadObtainedBackgrounds(obtainedBackgrounds);
   }
 });
 

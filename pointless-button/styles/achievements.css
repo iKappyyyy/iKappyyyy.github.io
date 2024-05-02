@@ -65,8 +65,9 @@
   font-weight: 600;
   text-align: center;
   overflow: hidden;
-  animation-name: achievement-pop;
-  animation-duration: 5s;
+  /* animation-name: achievement-pop;
+  animation-duration: 5s; */
+  transition: bottom 500ms;
 }
 
 .achievement p {
@@ -123,7 +124,7 @@
 .achievement-slot:last-of-type {
   border-bottom-left-radius: 15px;
 }
-
+/* 
 @keyframes achievement-pop {
   0% {
     bottom: -120px;
@@ -140,4 +141,4 @@
   100% {
     bottom: -120px;
   }
-}
+} */

@@ -7,57 +7,67 @@ export const unobtainedAchievements = JSON.parse(localStorage.getItem('unobtaine
   {
     clicksRequirement: 69,
     name: 'Funny Number',
-    description: 'Reach 69 clicks lololol'
+    description: 'Reach 69 Clicks lololol'
   },
   {
     clicksRequirement: 100,
     name: 'Clicky Button',
-    description: 'Reach 100 clicks'
+    description: 'Reach 100 Clicks'
   },
   {
     clicksRequirement: 420,
     name: 'What is That Smell?',
-    description: 'Reach 420 clicks'
+    description: 'Reach 420 Clicks'
   },
   {
-    clicksRequirement: 1000,
+    clicksRequirement: 1_000,
     name: 'That\'s a Lot of Clicks',
-    description: 'Reach 1,000 clicks'
+    description: 'Reach 1,000 Clicks'
   },
   {
-    clicksRequirement: 2500,
+    clicksRequirement: 2_500,
     name: 'Why Are You Still Clicking?',
-    description: 'Reach 2,500 clicks'
+    description: 'Reach 2,500 Clicks'
   },
   {
-    clicksRequirement: 5001,
+    clicksRequirement: 5_001,
     name: 'TROLLED YA!',
-    description: 'Reach 5,001 clicks'
+    description: 'Reach 5,001 Clicks'
   },
   {
-    clicksRequirement: 7000,
+    clicksRequirement: 7_000,
     name: 'SGIL',
-    description: 'Reach 7,000 clicks'
+    description: 'Reach 7,000 Clicks'
   },
   {
-    clicksRequirement: 10000,
+    clicksRequirement: 10_000,
     name: 'Better Stop Here Lol',
-    description: 'Reach 10,000 clicks'
+    description: 'Reach 10,000 Clicks'
   },
   {
-    clicksRequirement: 50000,
+    clicksRequirement: 15_000,
+    name: 'Cuz Why Not :)',
+    description: 'Reach 12,500 Clicks'
+  },
+  {
+    clicksRequirement: 25_000,
+    name: 'Good Job. Now Stop.',
+    description: 'Reach 25,000 Clicks'
+  },
+  {
+    clicksRequirement: 50_000,
     name: 'Halfway There',
-    description: 'Reach 50,000 clicks'
+    description: 'Reach 50,000 Clicks'
   },
   {
-    clicksRequirement: 69420,
+    clicksRequirement: 69_420,
     name: 'Ultimate Funny',
-    description: 'Reach 69,420 clicks (nice)'
+    description: 'Reach 69,420 Clicks (nice)'
   },
   {
-    clicksRequirement: 100000,
+    clicksRequirement: 100_000,
     name: 'why',
-    description: 'Reach 100,000 clicks'
+    description: 'Reach 100,000 Clicks'
   }
 ];
 

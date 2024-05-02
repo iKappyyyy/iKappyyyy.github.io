@@ -15,7 +15,7 @@ export function achievementReached(unobtainedAchievements, clicks) {
   return unobtainedAchievements[0].clicksRequirement <= clicks;
 }
 
-export function playAchievementReachedAnimation(unobtainedAchievements) {
+export function createAchievementPopUpElement(unobtainedAchievements) {
   const achievementElement = createAchievementElement();
   const achievementInfoElement = createAchievementElementInnerHtml(achievementElement);
 
@@ -25,9 +25,7 @@ export function playAchievementReachedAnimation(unobtainedAchievements) {
   <span class="achievement-name">${achievementReached.name}</span>
   ${achievementReached.description}`;
 
-  setTimeout(() => {
-    achievementElement.remove();
-  }, 5000);
+  return achievementElement;
 }
 
 export function updateAchievementLists(unobtainedAchievements, obtainedAchievements) {
