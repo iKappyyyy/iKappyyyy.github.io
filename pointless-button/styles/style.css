@@ -52,3 +52,27 @@ h1 {
   margin: 17px 0 0 17px;
   box-shadow: none;
 }
+
+.menu-button {
+  position: absolute;
+  top: 7.5px;
+  font-size: 2em;
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+  background: rgb(255, 255, 255);
+  display: grid;
+  place-items: center;
+  z-index: 100;
+}
+
+.menu-button:hover {
+  background: rgb(211, 211, 211);
+}
+
+.menu-button:active {
+  opacity: 0.8;
+}
+

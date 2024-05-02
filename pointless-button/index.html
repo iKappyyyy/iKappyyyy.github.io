@@ -11,27 +11,41 @@
   <link rel="stylesheet" href="styles/achievements.css">
   <link rel="stylesheet" href="styles/mute.css">
   <link rel="stylesheet" href="styles/backgrounds.css">
+  <link rel="stylesheet" href="styles/settings.css">
   <link rel="shortcut icon" type="image/png" href="images/icon.png">
   <title>Pointless Button</title>
 </head>
 <body>
   <!-- achievement stuff -->
-  <button class="achievement-button js-achievement-button">
+  <button class="menu-button achievement-button js-achievement-button">
     <i class="fa-solid fa-trophy"></i>
   </button>
   <div class="achievements-menu js-achievements-menu">
   </div>
 
   <!-- backgrounds stuff -->
-  <button class="background-button js-background-button">
+  <button class="menu-button background-button js-background-button">
     <i class="fa-regular fa-image"></i>
   </button>
   <div class="backgrounds-menu js-backgrounds-menu">
   </div>
 
-  <!-- mute button -->
-  <button class="mute-button js-mute-button">
+  <!-- settings stuff -->
+  <button class="menu-button settings-button js-settings-button">
+    <i class="fa-solid fa-gear js-settings-icon"></i>
   </button>
+  <div class="settings-menu js-settings-menu">
+    <div class="settings-slot">
+      Mute Button
+      <button class="mute-button js-mute-button"></button>
+    </div>
+    <hr>
+    <div class="settings-slot">
+      Background Blur
+      <input type="range" min="0" max="20"  class="background-blur-range js-background-blur-range">
+      <p>Blur: <span class="js-background-blur-amount">10</span></p>
+    </div>
+  </div>
 
   <!-- counter -->
   <h1>

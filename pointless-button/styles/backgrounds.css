@@ -1,25 +1,5 @@
 .background-button {
-  position: absolute;
-  top: 7.5px;
   right: 85px;
-  font-size: 2em;
-  border: 2px solid black;
-  border-radius: 50%;
-  width: 75px;
-  height: 75px;
-  cursor: pointer;
-  background: rgb(255, 255, 255);
-  display: grid;
-  place-items: center;
-  z-index: 100;
-}
-
-.background-button:hover {
-  background: rgb(211, 211, 211);
-}
-
-.background-button:active {
-  opacity: 0.8;
 }
 
 .backgrounds-menu {

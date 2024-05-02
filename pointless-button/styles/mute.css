@@ -1,17 +1,15 @@
 .mute-button {
-  position: absolute;
-  top: 7.5px;
-  left: 5px;
-  font-size: 2em;
+  font-size: 1.5em;
   border: 2px solid black;
   border-radius: 50%;
-  width: 75px;
-  height: 75px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   background: rgb(255, 255, 255);
   display: grid;
   place-items: center;
   z-index: 100;
+  /* margin: 10px; */
 }
 
 .mute-button:hover {
@@ -23,5 +21,5 @@
 }
 
 .fa-volume-xmark {
-  margin-right: 4px;
+  margin-right: 3px;
 }

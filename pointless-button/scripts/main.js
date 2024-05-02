@@ -6,16 +6,19 @@ import { toggleAchievementMenu, achievementReached, updateAchievementLists, crea
 import { toggleBackgroundsMenu, loadObtainedBackgrounds, backgroundReached, updateBackgroundsLists, changeBackground, createBackgroundPopUpElement } from "./backgrounds.js";
 import { changeMuteIcon, saveMutedToLocalStorage } from "./mute.js";
 import { achievementPopUpDurationMs, backgroundPopUpDurationMs, playPopUpAnimation, popUpElementHeightPx } from "./animations.js";
+import { toggleSettingsMenu } from "./settings.js";
 
 const button = document.querySelector('.js-pointless-button');
 const achievementButton = document.querySelector('.js-achievement-button');
 const backgroundButton = document.querySelector('.js-background-button');
+const settingsButton = document.querySelector('.js-settings-button');
 const muteButton = document.querySelector('.js-mute-button');
 const backgroundImage = localStorage.getItem('backgroundImage') || './images/background-1.gif';
 let clicks = Number(localStorage.getItem('clicks')) || 0;
 let audioMuted = Number(localStorage.getItem('muted')) || 0;
 let achievementMenuToggled = false;
 let backgroundsMenuToggled = false;
+let settingsMenuToggled = false;
 let groundLevel = 5;
 
 changeCounterValue(clicks); // change counter value at the start of program
@@ -57,13 +60,28 @@ button.addEventListener('click', () => {
 
 achievementButton.addEventListener('click', () => {
   achievementMenuToggled = toggleAchievementMenu(achievementMenuToggled);
-  if (backgroundsMenuToggled) // close other menu if open
+  // close other menus if open
+  if (backgroundsMenuToggled)
     backgroundsMenuToggled = toggleBackgroundsMenu(backgroundsMenuToggled);
+  if (settingsMenuToggled)
+    settingsMenuToggled = toggleSettingsMenu(settingsMenuToggled);
 });
 
 backgroundButton.addEventListener('click', () => {
   backgroundsMenuToggled = toggleBackgroundsMenu(backgroundsMenuToggled);
-  if (achievementMenuToggled) // close other menu if open
+  // close other menus if open
+  if (achievementMenuToggled)
+    achievementMenuToggled = toggleAchievementMenu(achievementMenuToggled);
+  if (settingsMenuToggled)
+    settingsMenuToggled = toggleSettingsMenu(settingsMenuToggled);
+});
+
+settingsButton.addEventListener('click', () => {
+  settingsMenuToggled = toggleSettingsMenu(settingsMenuToggled);
+  // close other menus if open
+  if (backgroundsMenuToggled)
+    backgroundsMenuToggled = toggleBackgroundsMenu(backgroundsMenuToggled);
+  if (achievementMenuToggled)
     achievementMenuToggled = toggleAchievementMenu(achievementMenuToggled);
 });
 
