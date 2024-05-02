@@ -18,26 +18,6 @@ export const unobtainedBackgrounds = JSON.parse(localStorage.getItem('unobtained
     clicksRequirement: 100000,
     imageLink: './images/background-5.gif',
     description: 'Obtained at 100,000 Clicks'
-  },
-  {
-    clicksRequirement: 100000,
-    imageLink: './images/background-5.gif',
-    description: 'Obtained at 100,000 Clicks'
-  },
-  {
-    clicksRequirement: 100000,
-    imageLink: './images/background-5.gif',
-    description: 'Obtained at 100,000 Clicks'
-  },
-  {
-    clicksRequirement: 100000,
-    imageLink: './images/background-5.gif',
-    description: 'Obtained at 100,000 Clicks'
-  },
-  {
-    clicksRequirement: 100000,
-    imageLink: './images/background-5.gif',
-    description: 'Obtained at 100,000 Clicks'
   }
 ];
 
