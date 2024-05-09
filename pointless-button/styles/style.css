@@ -27,6 +27,7 @@ h1 {
   font-family: "Chakra Petch", sans-serif;
   top: 75px;
   text-align: center;
+  text-shadow: 3px 2px 0px black;
 }
 
 .pointless-button {
