@@ -32,7 +32,7 @@ export const unobtainedAchievements = JSON.parse(localStorage.getItem('unobtaine
   {
     clicksRequirement: 2905,
     name: '¯\\_(ツ)_/¯ idfk',
-    description: 'o_o'
+    description: 'Reach 2,905 Clicks o_o'
   },
   {
     clicksRequirement: 5_001,
