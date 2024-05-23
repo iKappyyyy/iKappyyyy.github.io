@@ -12,7 +12,8 @@ const projectsInfo = [
   { folder: 'credit-card', file: 'index.html', title: 'Credit Card!' },
   { folder: 'tip-calculator', file: 'index.html', title: 'Tip Calculator!' },
   { folder: 'age-calculator', file: 'index.html', title: 'Age Calculator!' },
-  { folder: 'pointless-button', file: 'index.html', title: 'Pointless Button' }
+  { folder: 'pointless-button', file: 'index.html', title: 'Pointless Button' },
+  { folder: 'wynncraft-item-map-coordinate-grabber', file: 'index.html', title: 'Item Map Coords Grabber'}
 ];
 const projectsElement = document.querySelector('.js-projects');
 
