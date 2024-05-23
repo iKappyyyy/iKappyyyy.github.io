@@ -7,14 +7,28 @@ export function inputIsValid(urlInput) {
 
 export function getSeparateCoordinatesList(urlInput) {
   let url = urlInput.value.replace("https://map.wynncraft.com/?coords=", "");
-  url = url.substring(0, url.indexOf(",0#"));
-  const urlList = url.split(",0,");
-  return urlList;
+  url = url.substring(0, url.indexOf("#"));
+  const seperateValuesCoordinatesList = url.split(",");
+  const coordinatesList = [];
+  let tempList = [];
+  for (let i = 0; i < seperateValuesCoordinatesList.length; i++) {
+    if (i !== 0 && !(i % 4)) {
+      coordinatesList.push(tempList);
+      tempList = [];
+    }
+
+    tempList.push(seperateValuesCoordinatesList[i]);
+  }
+
+  if (tempList.length) {
+    coordinatesList.push(tempList);
+  }
+
+  return coordinatesList;
 }
 
-function* separateCoordinatesGenerator(coordinates) {
-  const nameOfValueList = ["X", "Y", "Z"];
-  const values = coordinates.split(",");
+function* separateCoordinatesGenerator(values) {
+  const nameOfValueList = ["X", "Y", "Z", "R"];
   for (let i = 0; i < values.length; i++) {
     yield [nameOfValueList[i], values[i]];
   }
