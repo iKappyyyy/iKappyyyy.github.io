@@ -1,0 +1,36 @@
+.coordinates-grid {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.coordinate {
+  border: 1px solid rgb(75, 75, 75);
+  width: 200px;
+  font-family: Arial;
+  text-align: center;
+  font-size: 1.3em;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+.coordinate-header {
+  background: rgb(95, 182, 95);
+  border-bottom: 1px solid rgb(75, 75, 75);
+  padding: 10px 0;
+}
+
+.coordinate-values {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  background: rgb(75, 75, 75);
+  gap: 1px;
+}
+
+.coordinate-values p {
+  background: white;
+  padding: 5px;
+  user-select: text;
+}

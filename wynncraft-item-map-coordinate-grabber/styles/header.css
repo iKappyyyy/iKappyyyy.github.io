@@ -1,0 +1,46 @@
+header {
+  /* background: red; */
+  height: 70px;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid rgb(202, 202, 202);
+  gap: 30px;
+}
+
+@media (max-width: 529px) {
+  .header-button {
+    display: none;
+  }
+}
+
+.header-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.5em;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.header-button-container:first-of-type {
+  margin-right: auto;
+}
+
+.header-button {
+  background: none;
+  border: none;
+  font-family: "Poetsen One", sans-serif;
+  transition: color 0.1s;
+  margin-left: auto;
+}
+
+.header-button-container:hover {
+  color: rgb(75, 75, 75);
+}
+
+.header-button-container:active {
+  opacity: 0.8;
+}

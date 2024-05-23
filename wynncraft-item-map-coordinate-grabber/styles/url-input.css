@@ -1,0 +1,90 @@
+.url-input-container {
+  margin-top: 30px;
+  height: 40px;
+  padding: 20px 150px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 765px) {
+  .url-input-container {
+    padding-inline: 50px;
+  }
+}
+
+.url-input-content-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  transition: box-shadow 0.15s;
+}
+
+.url-input {
+  flex-grow: 1;
+  outline: none;
+  border: 1px solid rgb(75, 75, 75);
+  padding-left: 10px;
+  font-size: 1em;
+  font-weight: 400;
+  height: 100%;
+  min-width: 40px;
+}
+
+.url-input-content-container:hover {
+  box-shadow: 3px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.url-input-content-container .fa-paste {
+  position: absolute;
+  margin-right: 55px;
+  font-size: 1.3em;
+  cursor: pointer;
+  background: white;
+}
+
+.url-input-content-container .fa-paste:hover {
+  color: rgb(75, 75, 75);
+}
+
+.url-input-content-container .fa-paste:active {
+  opacity: 0.8;
+}
+
+.fa-paste:hover::after {
+  position: absolute;
+  width: max-content;
+  bottom: -50px;
+  left: 50%;
+  border: 1px solid rgb(75, 75, 75);
+  padding: 5px 15px;
+  border-radius: 5px;
+  text-align: center;
+  color: black;
+  transform: translateX(-50%);
+  font-family: sans-serif;
+  content: attr(data-tooltip);
+}
+
+.url-input-content-container .fa-magnifying-glass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(200, 200, 200);
+  height: 40px;
+  width: 40px;
+  padding: 1px;
+  border: 1px solid rgb(75, 75, 75);
+  cursor: pointer;
+  border-left-width: 0px;
+  transition: background-color 0.15s;
+  flex-shrink: 0;
+}
+
+.url-input-content-container .fa-magnifying-glass:hover {
+  background: rgb(170, 170, 170);
+}
+
+.url-input-content-container .fa-magnifying-glass:active {
+  opacity: 0.8;
+}

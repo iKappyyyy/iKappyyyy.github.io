@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wynncraft Item Map Coordinate Grabber</title>
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/url-input.css">
+  <link rel="stylesheet" href="styles/coordinates.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header>
+    <a class="header-button-container" href="index.html">
+      <i class="fa-solid fa-house"></i>
+      <p class="header-button">Home</p>
+    </a>
+    <a class="header-button-container" href="https://wynncraft.com/help/item-guide" target="_blank">
+      <i class="fa-solid fa-filter"></i>
+      <p class="header-button">Item Guide</p>
+    </a>
+    <a class="header-button-container" href="guide.html">
+      <i class="fa-solid fa-question"></i>
+      <p class="header-button">How It Works</p>
+    </a>
+  </header>
+  <main>
+    <div class="url-input-container">
+      <div class="url-input-content-container">
+        <input type="text" class="url-input js-url-input">
+        <i class="fa-regular fa-paste js-paste" data-tooltip="Paste"></i>
+        <i class="fa-solid fa-magnifying-glass js-search"></i>
+      </div>
+    </div>
+
+    <div class="coordinates-grid js-coordinates-grid">
+    </div>
+  </main>
+
+  <script src="scripts/main.js" type="module"></script>
+</body>
+</html>
