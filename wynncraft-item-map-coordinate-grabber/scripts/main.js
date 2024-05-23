@@ -14,7 +14,7 @@ pasteButton.addEventListener('mouseout', () => {
   pasteButton.setAttribute('data-tooltip', 'Paste');
 });
 
-searchButton.addEventListener('click', () => {
+function generateCoordinatesHtml() {
   if (!inputIsValid(urlInput)) {
     alert("URL isn't valid!");
     return;
@@ -23,4 +23,9 @@ searchButton.addEventListener('click', () => {
   const coordinatesList = getSeparateCoordinatesList(urlInput);
   const html = getCoordinatesHtml(coordinatesList)
   coordinatesGrid.innerHTML = html;
+}
+
+searchButton.addEventListener('click', generateCoordinatesHtml);
+urlInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter') generateCoordinatesHtml();
 });
