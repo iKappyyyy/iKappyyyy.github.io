@@ -75,4 +75,5 @@ li {
 
 .dim-background img {
   width: 90%;
+  cursor: default;
 }
