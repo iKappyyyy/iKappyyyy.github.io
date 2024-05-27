@@ -1,5 +1,6 @@
 import { pasteButton, urlInput } from "./pasteUrl.js";
 import { inputIsValid, getSeparateCoordinatesList, getCoordinatesHtml } from "./generateCoordinates.js";
+import { createCopyCoordsElements } from "./copyCoordsButton.js";
 
 const searchButton = document.querySelector('.js-search');
 const coordinatesGrid = document.querySelector('.js-coordinates-grid');
@@ -21,8 +22,14 @@ function generateCoordinatesHtml() {
   }
 
   const coordinatesList = getSeparateCoordinatesList(urlInput);
-  const html = getCoordinatesHtml(coordinatesList)
+  const html = getCoordinatesHtml(coordinatesList);
+  const copyCordsContainer = document.querySelector('.js-copy-coords-container');
   coordinatesGrid.innerHTML = html;
+
+  if (copyCordsContainer) {
+    copyCordsContainer.remove();
+  }
+  document.body.appendChild(createCopyCoordsElements(coordinatesList));
 }
 
 searchButton.addEventListener('click', generateCoordinatesHtml);

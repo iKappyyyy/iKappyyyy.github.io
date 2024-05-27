@@ -1,0 +1,33 @@
+.copy-coords-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial;
+}
+
+.copy-coords-button, .toggle-radius-button {
+  padding: 10px 15px;
+  background: #A474F5;
+  border: 3px outset #A474F5;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  margin-inline: 2.5px;
+  cursor: pointer;
+  transition: padding 0.15s ease-out;
+
+  display: flex;
+  gap: 10px;
+}
+
+.toggle-radius-button {
+  background: #C6F574;
+  border-color: #C6F574;
+}
+
+.copy-coords-button:hover, .toggle-radius-button:hover {
+  padding-inline: 25px;
+}
+
+.copy-coords-button:active, .toggle-radius-button:active {
+  opacity: 0.8;
+}

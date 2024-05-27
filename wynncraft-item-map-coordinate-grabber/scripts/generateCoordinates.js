@@ -7,7 +7,6 @@ export function inputIsValid(urlInput) {
 
   url = url.replace("https://map.wynncraft.com/?coords=", "");
   url = url.substring(0, url.indexOf("#"));
-  console.log(url);
   const conditionTwo = /^[0-9,-]+$/.test(url);
   return (conditionOne && conditionTwo);
 }
