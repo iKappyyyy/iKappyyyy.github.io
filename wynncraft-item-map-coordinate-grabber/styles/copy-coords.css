@@ -31,3 +31,73 @@
 .copy-coords-button:active, .toggle-radius-button:active {
   opacity: 0.8;
 }
+
+.copied-popup {
+  font-family: Arial;
+  font-size: 1.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #A474F5;
+  /* border: 5px outset #A474F5; */
+  border: 3px solid #432479;
+  border-radius: 0 20px 0 20px;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3);
+  width: 25%;
+  height: 75px;
+  position: fixed;
+  bottom: -100px;
+  right: 10px;
+  padding: 5px;
+  transform: scaleX(1);
+  animation: popup 5s ease-out;
+}
+
+.copied-popup::after {
+  content: '';
+  position: absolute;
+  width: 95%;
+  background: black;
+  height: 3px;
+  bottom: 12.5px;
+  transform-origin: bottom left;
+  transition: transform 5s linear;
+  animation: progress-bar 5s linear;
+}
+
+.copied-popup:hover::after {
+  transform: scaleX(0);
+}
+
+@keyframes popup {
+  0% {
+    bottom: -100px;
+  }
+
+  5% {
+    bottom: 10px;
+  }
+
+  90% {
+    bottom: 10px;
+  }
+
+  100% {
+    bottom: -100px;
+  }
+}
+
+@keyframes progress-bar {
+  0% {
+    transform: scaleX(1);
+  }
+
+  85% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(0);
+  }
+  
+}
