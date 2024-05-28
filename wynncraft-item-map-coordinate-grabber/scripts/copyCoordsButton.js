@@ -1,4 +1,4 @@
-let includeRadius = true;
+let includeRadius = false;
 
 export function createCopyCoordsElements(coordinatesList) {
   const copyButton = createCopyButton(coordinatesList);
@@ -48,7 +48,7 @@ function createToggleRadiusButton() {
   button.classList.add('js-toggle-radius-button');
   button.innerHTML = 'Include Radius <i class="fa-brands fa-codepen"></i>';
 
-  includeRadius = true;
+  includeRadius = false;
   button.addEventListener('click', () => {
     if (includeRadius) {
       includeRadius = false;
