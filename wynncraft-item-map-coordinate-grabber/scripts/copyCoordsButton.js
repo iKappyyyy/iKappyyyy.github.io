@@ -52,10 +52,10 @@ function createToggleRadiusButton() {
   button.addEventListener('click', () => {
     if (includeRadius) {
       includeRadius = false;
-      button.innerHTML = 'Exclude Radius <i class="fa-brands fa-codepen"></i>';
+      button.innerHTML = 'Include Radius <i class="fa-brands fa-codepen"></i>';
     } else {
       includeRadius = true;
-      button.innerHTML = 'Include Radius <i class="fa-brands fa-codepen"></i>';
+      button.innerHTML = 'Exclude Radius <i class="fa-brands fa-codepen"></i>';
     }
   });
   return button;
