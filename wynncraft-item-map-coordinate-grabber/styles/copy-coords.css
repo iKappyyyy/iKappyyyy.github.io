@@ -51,6 +51,9 @@
   padding: 5px;
   transform: scaleX(1);
   animation: popup 5s ease-out;
+  text-wrap: nowrap;
+  min-width: fit-content;
+  max-width: 350px;
 }
 
 .copied-popup::after {
