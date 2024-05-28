@@ -1,4 +1,4 @@
-let toggled = false;
+let includeRadius = true;
 
 export function createCopyCoordsElements(coordinatesList) {
   const copyButton = createCopyButton(coordinatesList);
@@ -23,18 +23,18 @@ function createCopyButton(coordinatesList) {
   button.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Coordinates';
 
   button.addEventListener('click', () => {
-    if (toggled) {
-      coordinatesList.forEach(coordinate => {
-        coordinate.splice(-1, 1);
-      });
-    }
-
     let text = '';
     coordinatesList.forEach((coordinate, index) => {
-      text += `Coordinate #${zfill(index + 1, String(coordinatesList.length).length)} | ${coordinate.join(', ')}\n`;
-    })
-    text = text.slice(0, -1);
+      text += `Coordinate #${zfill(index + 1, String(coordinatesList.length).length)} | ${coordinate.join(', ')}`;
+      
+      if (!includeRadius) {
+        text = text.slice(0, text.lastIndexOf(','));
+      }
 
+      text += '\n';
+    });
+
+    text = text.slice(0, -1);
     navigator.clipboard.writeText(text);
     createPopUp();
   });
@@ -46,15 +46,15 @@ function createToggleRadiusButton() {
   const button = document.createElement('button');
   button.classList.add('toggle-radius-button');
   button.classList.add('js-toggle-radius-button');
-  button.innerHTML = 'Exclude Radius <i class="fa-brands fa-codepen"></i>';
+  button.innerHTML = 'Include Radius <i class="fa-brands fa-codepen"></i>';
 
-  toggled = false;
+  includeRadius = true;
   button.addEventListener('click', () => {
-    if (toggled) {
-      toggled = false;
+    if (includeRadius) {
+      includeRadius = false;
       button.innerHTML = 'Exclude Radius <i class="fa-brands fa-codepen"></i>';
     } else {
-      toggled = true;
+      includeRadius = true;
       button.innerHTML = 'Include Radius <i class="fa-brands fa-codepen"></i>';
     }
   });
@@ -71,4 +71,18 @@ function createPopUp() {
   div.innerText = 'Text Copied to Clipboard!';
 
   document.body.appendChild(div);
+
+  setTimeout(() => {
+    div.remove();
+  }, 5000);
+}
+
+function cloneArray(arr) {
+  const clone = [];
+
+  arr.forEach(value => {
+    clone.push(value);
+  })
+
+  return clone;
 }
