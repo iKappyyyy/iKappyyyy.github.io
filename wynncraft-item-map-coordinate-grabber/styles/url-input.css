@@ -12,14 +12,6 @@
   }
 }
 
-.url-input-content-container {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-  transition: box-shadow 0.15s;
-}
-
 .url-input {
   flex-grow: 1;
   outline: none;
@@ -31,13 +23,44 @@
   min-width: 40px;
 }
 
+.url-input-content-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  transition: box-shadow 0.15s;
+}
+
 .url-input-content-container:hover {
   box-shadow: 3px 5px 0 rgba(0, 0, 0, 0.3);
 }
 
+.button-container {
+  position: relative;
+}
+
+.fa-link:hover::after,
+.fa-magnifying-glass:hover::after {
+  position: absolute;
+  width: max-content;
+  bottom: -38.4px;
+  left: 50%;
+  border: 1px solid rgb(75, 75, 75);
+  padding: 5px 15px;
+  border-radius: 5px;
+  text-align: center;
+  color: black;
+  transform: translateX(-50%);
+  font-family: sans-serif;
+  content: attr(data-tooltip);
+  font-weight: 500;
+  font-size: 1.3rem;
+  background: white;
+}
+
 .url-input-content-container .fa-paste {
   position: absolute;
-  margin-right: 55px;
+  margin-right: 98px;
   font-size: 1.3em;
   cursor: pointer;
   background: white;
@@ -64,9 +87,12 @@
   transform: translateX(-50%);
   font-family: sans-serif;
   content: attr(data-tooltip);
+  font-weight: 500;
+  background: white;
 }
 
-.url-input-content-container .fa-magnifying-glass {
+.url-input-content-container .fa-magnifying-glass,
+.url-input-content-container .fa-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,10 +107,11 @@
   flex-shrink: 0;
 }
 
-.url-input-content-container .fa-magnifying-glass:hover {
+.url-input-content-container .fa-magnifying-glass:hover,
+.url-input-content-container .fa-link:hover {
   background: rgb(170, 170, 170);
 }
 
-.url-input-content-container .fa-magnifying-glass:active {
+.url-input-content-container .fa-magnifying-glass:active, .url-input-content-container .fa-link:active {
   opacity: 0.8;
 }

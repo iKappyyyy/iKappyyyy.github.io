@@ -1,3 +1,4 @@
+import { usedColors, maxLinks } from "./multiLinks.js";
 const VALUE_NAME = 0;
 const VALUE_VALUE = 1;
 
@@ -40,13 +41,28 @@ function* separateCoordinatesGenerator(values) {
   }
 }
 
-export function getCoordinatesHtml(coordinatesList) {
+export function getCoordinatesHtml(coordinatesList, multiLinksEnabled) {
+  if (multiLinksEnabled && usedColors.length + 1 > maxLinks) {
+    alert('Link Limit Reached!');
+    return ''; // empty string because that's what's going to be added to the html
+  }
+
+  let changeHeaderColor = `style="background: rgb(95, 182, 95);"`
+  let lastCoordinateNumber = 0;
+  if (multiLinksEnabled) {
+    usedColors.push(generateRandomColor());
+    changeHeaderColor = `style="background: ${usedColors[usedColors.length - 1]};"`;
+    lastCoordinateNumber = getLastCoordinateNumber();
+  }
+
   let html = '';
   coordinatesList.forEach((coordinates, index) => {
     html += `
     <div class="coordinates-grid">
-      <div class="coordinate">
-        <p class="coordinate-header">Coordinate #${index + 1}</p>
+      <div class="coordinate js-coordinate">
+        <p class="coordinate-header" contenteditable="true" ${multiLinksEnabled ? changeHeaderColor : ''}>
+          Coordinate #${lastCoordinateNumber + index + 1}
+        </p>
         <div class="coordinate-values">
     `
     for (let value of separateCoordinatesGenerator(coordinates)) {
@@ -61,4 +77,17 @@ export function getCoordinatesHtml(coordinatesList) {
   });
 
   return html;
+}
+
+function generateRandomColor() {
+  const red = Math.floor(Math.random() * 256);
+  const green = Math.floor(Math.random() * 256);
+  const blue = Math.floor(Math.random() * 256);
+
+  return `rgb(${red}, ${green}, ${blue})`;
+}
+
+function getLastCoordinateNumber() {
+  const coordinates = document.querySelectorAll('.js-coordinate');
+  return coordinates.length;
 }

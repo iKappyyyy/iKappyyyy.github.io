@@ -1,7 +1,8 @@
+const HEADER_INDEX = 0;
 let includeRadius = false;
 
-export function createCopyCoordsElements(coordinatesList) {
-  const copyButton = createCopyButton(coordinatesList);
+export function createCopyCoordsElements() {
+  const copyButton = createCopyButton();
   const toggleRadiusButton = createToggleRadiusButton();
   const container = createContainer(copyButton, toggleRadiusButton);
 
@@ -17,17 +18,21 @@ function createContainer(copyButton, toggleRadiusButton) {
   return div;
 }
 
-function createCopyButton(coordinatesList) {
+function createCopyButton() {
   const button = document.createElement('button');
   button.classList.add('copy-coords-button');
   button.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Coordinates';
 
   button.addEventListener('click', () => {
+    const coordinatesDataArray = getDataFromCoordinatesGrid();
+    const longestHeaderLength = getLongestHeaderLength(coordinatesDataArray);
+
     let text = '';
-    coordinatesList.forEach((coordinate, index) => {
-      text += `Coordinate #${zfill(index + 1, String(coordinatesList.length).length)} | ${coordinate.join(', ')}`;
+    coordinatesDataArray.forEach(coordinateData => {
+      const coordinateValuesArray = [...coordinateData].slice(1);
+      text += `| ${coordinateData[HEADER_INDEX].padEnd(longestHeaderLength, ' ')} | ${coordinateValuesArray.join(', ')}`;
       
-      if (!includeRadius && coordinate.length === 4) {
+      if (!includeRadius && coordinateValuesArray.length === 4) {
         text = text.slice(0, text.lastIndexOf(','));
       }
 
@@ -35,6 +40,7 @@ function createCopyButton(coordinatesList) {
     });
 
     text = text.slice(0, -1);
+    text = addBordersToText(text);
     navigator.clipboard.writeText(text);
     createPopUp();
   });
@@ -61,10 +67,6 @@ function createToggleRadiusButton() {
   return button;
 }
 
-function zfill(number, length) {
-  return number.toString().padStart(length, '0');
-}
-
 function createPopUp() {
   const div = document.createElement('div');
   div.classList.add('copied-popup');
@@ -77,12 +79,37 @@ function createPopUp() {
   }, 5000);
 }
 
-function cloneArray(arr) {
-  const clone = [];
+function addBordersToText(text) {
+  let maxLineCharLength = 0;
+  text.split('\n').forEach(line => {
+    if (maxLineCharLength < line.length) maxLineCharLength = line.length;
+  });
 
-  arr.forEach(value => {
-    clone.push(value);
-  })
+  let styledText = `${'-'.repeat(maxLineCharLength + 2)}\n`;
+  text.split('\n').forEach(line => {
+    styledText += `${line.padEnd(maxLineCharLength, ' ')} |\n`;
+  });
+  styledText += `${'-'.repeat(maxLineCharLength + 2)}`;
 
-  return clone;
+  return styledText;
+}
+
+function getDataFromCoordinatesGrid() {
+  const coordinates = document.querySelectorAll('.js-coordinate');
+  const coordinatesDataArray = [];
+  coordinates.forEach(coordinate => {
+    const dataArray = coordinate.innerText.split('\n\n');
+    const filteredArray = dataArray.filter((_, index) => index % 2 === 0);
+    filteredArray[HEADER_INDEX] = filteredArray[HEADER_INDEX].replace(/\n/g, ' ');
+    coordinatesDataArray.push(filteredArray);
+  });
+  return coordinatesDataArray;
+}
+
+function getLongestHeaderLength(coordinatesDataArray) {
+  let longestLength = 0;
+  coordinatesDataArray.forEach(coordinateData => {
+    if (longestLength < coordinateData[HEADER_INDEX].length) longestLength = coordinateData[HEADER_INDEX].length;
+  });
+  return longestLength;
 }
