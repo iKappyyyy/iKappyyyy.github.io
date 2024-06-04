@@ -27,7 +27,7 @@ function createCopyButton(coordinatesList) {
     coordinatesList.forEach((coordinate, index) => {
       text += `Coordinate #${zfill(index + 1, String(coordinatesList.length).length)} | ${coordinate.join(', ')}`;
       
-      if (!includeRadius && text.length === 4) {
+      if (!includeRadius && coordinate.length === 4) {
         text = text.slice(0, text.lastIndexOf(','));
       }
 
