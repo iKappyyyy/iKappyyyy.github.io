@@ -7,14 +7,14 @@ export function inputIsValid(urlInput) {
   const conditionOne = url.startsWith("https://map.wynncraft.com/?coords=");
 
   url = url.replace("https://map.wynncraft.com/?coords=", "");
-  url = url.substring(0, url.indexOf("#"));
+  url = url.replace(/#.*$/, '');
   const conditionTwo = /^[0-9,-]+$/.test(url);
   return (conditionOne && conditionTwo);
 }
 
 export function getSeparateCoordinatesList(urlInput) {
   let url = urlInput.value.replace("https://map.wynncraft.com/?coords=", "");
-  url = url.substring(0, url.indexOf("#"));
+  url = url.replace(/#.*$/, '');
   const seperateValuesCoordinatesList = url.split(",");
   const coordinatesList = [];
   let tempList = [];
