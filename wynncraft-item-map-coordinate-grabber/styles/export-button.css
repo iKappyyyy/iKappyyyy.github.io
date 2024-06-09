@@ -1,4 +1,4 @@
-.copy-coords-container {
+.export-button-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,7 +7,7 @@
   gap: 5px;
 }
 
-.copy-coords-button, .toggle-radius-button {
+.export-button {
   padding: 10px 15px;
   background: #A474F5;
   border: 3px outset #A474F5;
@@ -22,15 +22,10 @@
   text-wrap: nowrap;
 }
 
-.toggle-radius-button {
-  background: #C6F574;
-  border-color: #C6F574;
-}
-
-.copy-coords-button:hover, .toggle-radius-button:hover {
+.export-button:hover {
   padding-inline: 25px;
 }
 
-.copy-coords-button:active, .toggle-radius-button:active {
+.export-button:active {
   opacity: 0.8;
 }
