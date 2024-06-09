@@ -58,19 +58,17 @@ export function getCoordinatesHtml(coordinatesList, multiLinksEnabled) {
   let html = '';
   coordinatesList.forEach((coordinates, index) => {
     html += `
-    <div class="coordinates-grid">
-      <div class="coordinate js-coordinate">
-        <p class="coordinate-header" contenteditable="true" ${multiLinksEnabled ? changeHeaderColor : ''}>
-          Coordinate #${lastCoordinateNumber + index + 1}
-        </p>
-        <div class="coordinate-values">
+    <div class="coordinate js-coordinate">
+      <p class="coordinate-header js-coordinate-header" contenteditable="true" ${multiLinksEnabled ? changeHeaderColor : ''}>
+        Coordinate #${lastCoordinateNumber + index + 1}
+      </p>
+      <div class="coordinate-values js-coordinate-values">
     `
     for (let value of separateCoordinatesGenerator(coordinates)) {
-      html += `          <p>${value[VALUE_NAME]}</p>`
-      html += `          <p>${value[VALUE_VALUE]}</p>`
+      html += `        <p>${value[VALUE_NAME]}</p>`
+      html += `        <p>${value[VALUE_VALUE]}</p>`
     }
     html += `
-        </div>
       </div>
     </div>
     `

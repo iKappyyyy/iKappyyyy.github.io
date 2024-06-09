@@ -4,6 +4,7 @@
   margin: 20px;
   align-items: center;
   flex-wrap: wrap;
+  gap: 40px;
 }
 
 .coordinate {

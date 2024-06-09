@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wynncraft Item Map Coordinate Grabber</title>
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/coordinates.css">
+  <link rel="stylesheet" href="styles/export-waypoints.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poetsen+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" type="image/png" href="images/wynncraft-icon.png">
+</head>
+<body>
+  <header>
+    <a class="header-button-container" href="index.html">
+      <i class="fa-solid fa-house"></i>
+      <p class="header-button">Home</p>
+    </a>
+    <a class="header-button-container" href="https://wynncraft.com/help/item-guide" target="_blank">
+      <i class="fa-solid fa-filter"></i>
+      <p class="header-button">Item Guide</p>
+    </a>
+    <a class="header-button-container" href="guide.html">
+      <i class="fa-solid fa-question"></i>
+      <p class="header-button">How It Works</p>
+    </a>
+  </header>
+  <main>
+    <div class="coordinates-grid js-coordinates-grid"></div>
+    <div class="inputs-container">
+      <div class="input-container">
+        <p class="input-title">Waypoints Title</p>
+        <input type="text" class="js-waypoints-title" placeholder="Example: Golden Avia Locations">
+      </div>
+      <div class="input-container item-name-container">
+        <p class="input-title">Item Name</p>
+        <input type="text" class="js-locations-name" placeholder="Example: Golden Avia">
+        <button class="reset-button js-reset-button">Reset</button>
+      </div>
+      <div class="input-container">
+        <p class="input-title centered">Icon</p>
+        <div class="icons-container js-icons-container">
+        </div>
+        <p class="input-title centered">Visibility</p>
+        <div class="visibility-pick-container">
+          <button class="arrow-up-button js-arrow-up-button"><i class="fa-solid fa-arrow-up"></i></button>
+          <div class="visibility-text-container"><p class="visibility-text js-visibility-text">Default</p></div>
+          <button class="arrow-down-button js-arrow-down-button"><i class="fa-solid fa-arrow-down"></i></button>
+        </div>
+      </div>
+      <div class="input-container">
+        <p class="input-title centered">Color</p>
+        <input type="color" class="color-picker js-color-picker" value="#ffffff">
+        <p class="input-title centered">Current Color: <span class="js-current-color">#FFFFFF</span></p>
+      </div>
+      <div class="export-button-container">
+        <button class="export-button js-export-button"><i class="fa-regular fa-copy"></i>EXPORT</button>
+      </div>
+    </div>
+    <div class="preview-container input-container">
+      <!-- <img src="images/preview-background.png" alt="preview background image" class="preview-background" draggable="false">
+      -->
+      <p style="font-family: Arial; margin: 10px;">nothing's here :)</p>
+      <!-- <p class="centered" style="font-family: Arial; margin: 10px;">I might add a preview but I'm lazy and I wanna get this over with, message me on discord or comment on the reddit post if you find any bugs or have suggestions for extra features</p>
+      <p style="font-family: Arial; margin-top: 50px; margin-left: 10px;">Discord: ikappyyyy</p>
+      <p style="font-family: Arial; margin-left: 10px;">Reddit post: <a target="_blank" style="color: blue; cursor: pointer;" href="https://www.reddit.com/r/WynnCraft/comments/1cyvtmy/i_made_a_little_static_website_to_get_the/">https://www.reddit.com/r/WynnCraft/comments/1cyvtmy/i_made_a_little_static_website_to_get_the/</a></p>
+    </div> -->
+  </main>
+
+  <script src="scripts/export page/loadIcons.js"></script>
+  <script src="scripts/export page/changeCurrentColorText.js"></script>
+  <script src="scripts/export page/changeLocationsName.js"></script>
+  <script src="scripts/export page/loadLocations.js" type="module"></script>
+  <script src="scripts/export page/resetNames.js"></script>
+  <script src="scripts/export page/changeVisibility.js"></script>
+  <script src="scripts/export page/exportData.js" type="module"></script>
+</body>
+</html>

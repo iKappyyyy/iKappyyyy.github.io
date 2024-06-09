@@ -1,19 +1,19 @@
+import { saveLocationsToStorage } from "./export page/loadLocations.js";
 const HEADER_INDEX = 0;
 let includeRadius = false;
 
 export function createCopyCoordsElements() {
   const copyButton = createCopyButton();
-  const toggleRadiusButton = createToggleRadiusButton();
-  const container = createContainer(copyButton, toggleRadiusButton);
+  const container = createContainer(copyButton);
 
   return container;
 }
 
-function createContainer(copyButton, toggleRadiusButton) {
+function createContainer(copyButton) {
   const div = document.createElement('div');
   div.classList.add('copy-coords-container');
   div.classList.add('js-copy-coords-container');
-  div.append(copyButton, toggleRadiusButton);
+  div.append(copyButton);
 
   return div;
 }
@@ -21,49 +21,13 @@ function createContainer(copyButton, toggleRadiusButton) {
 function createCopyButton() {
   const button = document.createElement('button');
   button.classList.add('copy-coords-button');
-  button.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Coordinates';
+  button.innerHTML = 'Export Waypoints<i class="fa-solid fa-external-link"></i>';
 
   button.addEventListener('click', () => {
-    const coordinatesDataArray = getDataFromCoordinatesGrid();
-    const longestHeaderLength = getLongestHeaderLength(coordinatesDataArray);
-
-    let text = '';
-    coordinatesDataArray.forEach(coordinateData => {
-      const coordinateValuesArray = [...coordinateData].slice(1);
-      text += `| ${coordinateData[HEADER_INDEX].padEnd(longestHeaderLength, ' ')} | ${coordinateValuesArray.join(', ')}`;
-      
-      if (!includeRadius && coordinateValuesArray.length === 4) {
-        text = text.slice(0, text.lastIndexOf(','));
-      }
-
-      text += '\n';
-    });
-
-    text = text.slice(0, -1);
-    text = addBordersToText(text);
-    navigator.clipboard.writeText(text);
-    createPopUp();
+    saveLocationsToStorage();
+    window.location.href = 'export-waypoints.html';
   });
 
-  return button;
-}
-
-function createToggleRadiusButton() {
-  const button = document.createElement('button');
-  button.classList.add('toggle-radius-button');
-  button.classList.add('js-toggle-radius-button');
-  button.innerHTML = 'Include Radius <i class="fa-brands fa-codepen"></i>';
-
-  includeRadius = false;
-  button.addEventListener('click', () => {
-    if (includeRadius) {
-      includeRadius = false;
-      button.innerHTML = 'Include Radius <i class="fa-brands fa-codepen"></i>';
-    } else {
-      includeRadius = true;
-      button.innerHTML = 'Exclude Radius <i class="fa-brands fa-codepen"></i>';
-    }
-  });
   return button;
 }
 
@@ -79,21 +43,6 @@ function createPopUp() {
   }, 5000);
 }
 
-function addBordersToText(text) {
-  let maxLineCharLength = 0;
-  text.split('\n').forEach(line => {
-    if (maxLineCharLength < line.length) maxLineCharLength = line.length;
-  });
-
-  let styledText = `${'-'.repeat(maxLineCharLength + 2)}\n`;
-  text.split('\n').forEach(line => {
-    styledText += `${line.padEnd(maxLineCharLength, ' ')} |\n`;
-  });
-  styledText += `${'-'.repeat(maxLineCharLength + 2)}`;
-
-  return styledText;
-}
-
 function getDataFromCoordinatesGrid() {
   const coordinates = document.querySelectorAll('.js-coordinate');
   const coordinatesDataArray = [];
@@ -106,10 +55,10 @@ function getDataFromCoordinatesGrid() {
   return coordinatesDataArray;
 }
 
-function getLongestHeaderLength(coordinatesDataArray) {
-  let longestLength = 0;
-  coordinatesDataArray.forEach(coordinateData => {
-    if (longestLength < coordinateData[HEADER_INDEX].length) longestLength = coordinateData[HEADER_INDEX].length;
-  });
-  return longestLength;
-}
+// function getLongestHeaderLength(coordinatesDataArray) {
+//   let longestLength = 0;
+//   coordinatesDataArray.forEach(coordinateData => {
+//     if (longestLength < coordinateData[HEADER_INDEX].length) longestLength = coordinateData[HEADER_INDEX].length;
+//   });
+//   return longestLength;
+// }

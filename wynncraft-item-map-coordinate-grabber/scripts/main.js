@@ -3,6 +3,9 @@ import { multiLinksButton, toggleMultiLinks } from "./multiLinks.js";
 import { inputIsValid, getSeparateCoordinatesList, getCoordinatesHtml } from "./generateCoordinates.js";
 import { createCopyCoordsElements } from "./copyCoordsButton.js";
 
+// urlInput.value = 'https://map.wynncraft.com/?coords=-1706,97,-2724,0,-1771,104,-2669,0,-1736,95,-2659,0,-1720,96,-2600,0,-1842,68,-2560,0,-1795,86,-2537,0,-1728,97,-2509,0,-1686,89,-2523,0,-1700,91,-2475,0,-1798,98,-2455,0';
+
+
 const searchButton = document.querySelector('.js-search');
 const coordinatesGrid = document.querySelector('.js-coordinates-grid');
 let previousUrl = '';
