@@ -13,7 +13,8 @@ const projectsInfo = [
   { folder: 'tip-calculator', file: 'index.html', title: 'Tip Calculator!' },
   { folder: 'age-calculator', file: 'index.html', title: 'Age Calculator!' },
   { folder: 'pointless-button', file: 'index.html', title: 'Pointless Button' },
-  { folder: 'WynnCoordsTool', file: 'index.html', title: 'Item Map Coords Grabber'}
+  { folder: 'WynnCoordsTool', file: 'index.html', title: 'Item Map Coords Grabber' },
+  { folder: 'JuvSoccerLayout', file: 'index.html', title: 'Juventus Soccer Layouts' }
 ];
 const projectsElement = document.querySelector('.js-projects');
 
