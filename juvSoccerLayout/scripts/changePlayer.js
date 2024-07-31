@@ -34,7 +34,7 @@ players.forEach(player => {
         const playerId = playerOption.dataset.playerId;
         const playerInfo = playerInfos[String(playerId)];
         player.innerHTML = `
-          <img src="../images/${playerInfo.playerImage}.png" class="head">
+          <img src="./images/${playerInfo.playerImage}.png" class="head">
           <p class="player-name">${playerInfo.playerName}</p>
         `;
         changePlayerMenu.classList.remove('active');
