@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="images/icon.png">
+    <title>יוצר תמונות - יובנטוס ישראל</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/cycle-layouts.css">
+    <link rel="stylesheet" href="styles/soccer-field.css">
+    <link rel="stylesheet" href="styles/done-button.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="cycle-container">
+      <h1 class="cycle-header">סוג מערך</h1>
+      <div class="cycle-buttons-container">
+        <div class="cycle-arrow js-arrow-left">
+          <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <div class="cycle-option js-cycle-option">שגיאה</div>
+        <div class="cycle-arrow js-arrow-right">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+    </div>
+    <div class="soccer-field">
+        <img src="images/soccerFieldBackground.png" class="soccer-field-background">
+        <div class="player js-player" id="player1"></div>
+        <div class="player js-player" id="player2"></div>
+        <div class="player js-player" id="player3"></div>
+        <div class="player js-player" id="player4"></div>
+        <div class="player js-player" id="player5"></div>
+        <div class="player js-player" id="player6"></div>
+        <div class="player js-player" id="player7"></div>
+        <div class="player js-player" id="player8"></div>
+        <div class="player js-player" id="player9"></div>
+        <div class="player js-player" id="player10"></div>
+        <div class="player js-player" id="player11"></div>
+    </div>
+    
+    <button class="done-button js-done-button">סיימתי</button>
+    <script src="scripts/cycleLayouts.js" type="module"></script>
+    <script src="scripts/soccerField.js" type="module"></script>
+    <script src="scripts/changePageToPhoto.js" type="module"></script>
+</body>
+</html>
