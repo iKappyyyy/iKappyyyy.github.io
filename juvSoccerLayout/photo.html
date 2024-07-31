@@ -17,7 +17,7 @@
   <div class="photo js-photo">
   </div>
 
-  <div class="image-content">
+  <div class="image-content js-image-content">
     <img class="background-image js-background-image" src="images/backgrounds/championsLeague.webp">
     <div class="player js-player" id="player1">
       <img src="images/nochoice.webp" class="head">
@@ -72,13 +72,6 @@
   </div>
 
   <div class="change-player-menu js-change-player-menu">
-    <button class="exit-button js-exit-button">
-      X
-    </button>
-    <div class="player-option" data-player-id="1">
-      <img src="images/chose.png" class="player-preview-image">
-      <p class="player-option-name">סקיבידי</p>
-    </div>
   </div>
 
   <button class="screenshot-button js-screenshot-button">צלם</button>
@@ -87,34 +80,7 @@
 
   <script src="scripts/load-backgrounds.js" type="module"></script>
   <script src="scripts/changePlayer.js" type="module"></script>
-  <script>
-    const screenshotButton = document.querySelector('.js-screenshot-button');
-    const image = document.querySelector('.image-content');
-
-    screenshotButton.addEventListener('click', () => {
-      const photo = image.cloneNode(true);
-      photo.classList.remove('image-content');
-      photo.classList.add('photo');
-      document.body.append(photo);
-
-      html2canvas(photo, {scale: 2}).then(canvas => {
-        canvas.toBlob(blob => {
-          try {
-            navigator.clipboard.write([
-            new ClipboardItem({'image/png': blob})
-            ]);
-
-            console.log('image copied lol');
-          } catch (error) {
-            console.log('shitos lo avad');
-          }
-        });
-      });
-
-      photo.remove();
-    });
-
-  </script>
+  <script src="scripts/copy-image.js"></script>
   <script src="scripts/loadPhotoLayout.js" type="module"></script>
   
 </body>
