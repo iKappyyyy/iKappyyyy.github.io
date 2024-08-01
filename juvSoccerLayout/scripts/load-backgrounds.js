@@ -3,6 +3,7 @@ import backgroundNames, { backgroundsInfo } from "./data/backgrounds.js";
 const backgroundChoices = document.querySelector('.js-background-choices');
 const changeBackgroundButton = document.querySelector('.js-change-background');
 
+// open and close menu
 let activeBackgroundChoices = false;
 changeBackgroundButton.addEventListener('click', () => {
   if (activeBackgroundChoices) {
