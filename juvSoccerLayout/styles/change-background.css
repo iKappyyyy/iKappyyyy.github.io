@@ -21,7 +21,7 @@
   align-items: flex-start;
 }
 
-.background-change-container:hover .background-choices {
+.background-choices.active {
   max-height: 800px;
   border-width: 1px;
 }

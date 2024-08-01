@@ -9,17 +9,18 @@ screenshotButton.addEventListener('click', () => {
   document.body.append(photo);
 
   html2canvas(photo, {scale: 2}).then(canvas => {
-    canvas.toBlob(blob => {
-      try {
-        navigator.clipboard.write([
-        new ClipboardItem({'image/png': blob})
-        ]);
+    const imageUrl = canvas.toDataURL('image/png');
 
-        console.log('image copied lol');
-      } catch (error) {
-        console.log('shitos lo avad');
-      }
-    });
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const filename = `juvLayout-${timestamp}.png`;
+
+    const photoFile = document.createElement('a');
+    photoFile.href = imageUrl;
+    photoFile.download = filename;
+
+    document.body.appendChild(photoFile);
+    photoFile.click();
+    document.body.removeChild(photoFile);
   });
 
   photo.remove();

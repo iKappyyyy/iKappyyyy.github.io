@@ -1,6 +1,18 @@
 import backgroundNames, { backgroundsInfo } from "./data/backgrounds.js";
 
 const backgroundChoices = document.querySelector('.js-background-choices');
+const changeBackgroundButton = document.querySelector('.js-change-background');
+
+let activeBackgroundChoices = false;
+changeBackgroundButton.addEventListener('click', () => {
+  if (activeBackgroundChoices) {
+    activeBackgroundChoices = false;
+    backgroundChoices.classList.remove('active');
+  } else {
+    activeBackgroundChoices = true;
+    backgroundChoices.classList.add('active');
+  }
+});
 
 let html = '';
 backgroundNames.forEach(background => {
