@@ -14,7 +14,8 @@ const projectsInfo = [
   { folder: 'age-calculator', file: 'index.html', title: 'Age Calculator!' },
   { folder: 'pointless-button', file: 'index.html', title: 'Pointless Button' },
   { folder: 'WynnCoordsTool', file: 'index.html', title: 'Item Map Coords Grabber' },
-  { folder: 'juvSoccerLayout', file: 'index.html', title: 'Juventus Soccer Layouts' }
+  { folder: 'juvSoccerLayout', file: 'index.html', title: 'Juventus Soccer Layouts' },
+  { folder: 'roy-birthday', file: 'index.html', title: 'ROY BIRTHDAY' }
 ];
 const projectsElement = document.querySelector('.js-projects');
 
