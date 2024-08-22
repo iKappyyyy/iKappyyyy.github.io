@@ -49,39 +49,16 @@
 .player {
   max-width: 60px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 
   position: relative;
-  /* background: red; */
 }
 
 #player1 {
+  --row-length: 10;
   grid-column: 3;
-  grid-row: 44 / calc(44 + var(--row-length));
-}
-
-#player1 .player-name {
-  bottom: -33px;
-}
-
-.player-name {
-  font-size: 20px;
-  text-wrap: nowrap;
-  margin: 0;
-  color: white;
-  font-weight: 700;
-  text-shadow:
-    0.05em 0 black,
-    0 0.05em black,
-    -0.05em 0 black,
-    0 -0.05em black,
-    -0.05em -0.05em black,
-    -0.05em 0.05em black,
-    0.05em -0.05em black,
-    0.05em 0.05em black;
-  position: absolute;
-  bottom: 9px;
+  grid-row: 41 / calc(41 + var(--row-length));
 }
 
 @media ((min-width: 450.1px) and (max-width: 600px)) or ((max-height: 920px)) {
@@ -95,15 +72,6 @@
 
   .head {
     width: 80%;
-  }
-
-  .player-name {
-    font-size: 1rem;
-    bottom: -7px;
-  }
-
-  #player1 .player-name {
-    bottom: -40px;
   }
 
   .change-background {
@@ -129,14 +97,6 @@
     width: 90%;
   }
 
-  .player-name {
-    font-size: 0.8rem;
-  }
-
-  #player1 .player-name {
-    bottom: -22px;
-  }
-
   .change-background {
     padding: 3px 15px;
     font-size: 0.8rem;
@@ -158,14 +118,6 @@
 
   .head {
     width: 90%;
-  }
-
-  .player-name {
-    font-size: 0.6rem;
-  }
-
-  #player1 .player-name {
-    bottom: -15px;
   }
 
   .change-background {

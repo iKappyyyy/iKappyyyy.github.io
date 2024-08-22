@@ -20,9 +20,5 @@
 }
 
 .photo .player {
-  max-width: 80px;
-}
-
-.photo .player-name {
-  bottom: 15px;
+  max-width: 100px;
 }

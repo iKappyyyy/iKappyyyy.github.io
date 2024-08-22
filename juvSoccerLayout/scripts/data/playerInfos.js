@@ -1,55 +1,57 @@
 const playerInfos = {
   '1': {
-    playerName: 'ניסים מזרכי',
-    playerImage: 'chose'
+    playerImage: 'bremer'
   },
   '2': {
-    playerName: 'אדרי בן זכאי',
-    playerImage: 'chose'
+    playerImage: 'cabal'
   },
   '3': {
-    playerName: 'שרק',
-    playerImage: 'chose'
+    playerImage: 'cambiaso'
   },
   '4': {
-    playerName: 'פטריק סטאר',
-    playerImage: 'chose'
+    playerImage: 'danilo'
   },
   '5': {
-    playerName: 'מגנוק',
-    playerImage: 'chose'
+    playerImage: 'dluiz'
   },
   '6': {
-    playerName: 'טום טרגר',
-    playerImage: 'chose'
+    playerImage: 'fagioli'
   },
   '7': {
-    playerName: 'אור פז',
-    playerImage: 'chose'
+    playerImage: 'gatti'
   },
   '8': {
-    playerName: 'גרי המבורגרי',
-    playerImage: 'chose'
+    playerImage: 'locatelli'
   },
   '9': {
-    playerName: 'אסף לוץ',
-    playerImage: 'chose'
+    playerImage: 'mckennie'
   },
   '10': {
-    playerName: 'אבי רון',
-    playerImage: 'chose'
+    playerImage: 'milik'
   },
   '11': {
-    playerName: 'יערון',
-    playerImage: 'chose'
+    playerImage: 'savona'
   },
   '12': {
-    playerName: 'יצחקי מצחקי',
-    playerImage: 'chose'
+    playerImage: 'thuram'
   },
   '13': {
-    playerName: 'פיתר פרכר',
-    playerImage: 'chose'
+    playerImage: 'vlahovic'
+  },
+  '14': {
+    playerImage: 'weah'
+  },
+  '15': {
+    playerImage: 'yildiz'
+  },
+  '16': {
+    playerImage: 'pinsoglio'
+  },
+  '17': {
+    playerImage: 'perin'
+  },
+  '18': {
+    playerImage: 'digregorio'
   }
 }
 

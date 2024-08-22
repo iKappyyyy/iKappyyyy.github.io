@@ -66,37 +66,30 @@
 .player-option {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   box-sizing: border-box;
   padding: 10px 0;
   width: 100px;
   height: 150px;
-  background-image: radial-gradient(white, rgb(185, 185, 185));
+  /* background-image: radial-gradient(white, rgb(185, 185, 185)); */
   cursor: pointer;
   transition: box-shadow 0.15s;
 }
 
-.player-option:hover {
+.player-preview-image:hover {
   box-shadow: 0 0 20px 5px rgba(255, 255, 255, 1);
 }
 
-.player-option:active {
+.player-preview-image:active {
   opacity: 0.8;
 }
 
 .player-preview-image {
-  width: 50px;
-  align-self: center;
-}
-
-.player-option-name {
-  background: white;
   width: 100%;
-  text-align: center;
-  text-wrap: wrap;
-  margin: auto;
+  align-self: center;
+  transition: box-shadow 0.15s;
 }
 
 @media (min-width: 600.1px) and (min-height: 920.1px) {
