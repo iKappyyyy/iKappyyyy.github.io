@@ -1,5 +1,4 @@
 import playerInfos from "./data/playerInfos.js";
-import loadLayout from "./loadPhotoLayout.js";
 
 const players = document.querySelectorAll('.js-player');
 const changePlayerMenu = document.querySelector('.js-change-player-menu');

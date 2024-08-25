@@ -45,12 +45,18 @@ const playerInfos = {
     playerImage: 'yildiz'
   },
   '16': {
-    playerImage: 'pinsoglio'
+    playerImage: 'kalulu'
   },
   '17': {
-    playerImage: 'perin'
+    playerImage: 'mbangula'
   },
   '18': {
+    playerImage: 'pinsoglio'
+  },
+  '19': {
+    playerImage: 'perin'
+  },
+  '20': {
     playerImage: 'digregorio'
   }
 }
