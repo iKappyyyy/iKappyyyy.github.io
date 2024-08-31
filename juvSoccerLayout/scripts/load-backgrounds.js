@@ -25,11 +25,6 @@ backgroundNames.forEach(background => {
       </p>
     </div>
   `;
-
-  const imageLoad = document.createElement('img');
-  imageLoad.setAttribute('src', `./images/backgrounds/${background}.webp`);
-  document.body.appendChild(imageLoad);
-  imageLoad.classList.add('background-loader');
 });
 backgroundChoices.innerHTML = html;
 
