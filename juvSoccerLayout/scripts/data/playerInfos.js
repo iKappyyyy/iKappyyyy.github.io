@@ -39,45 +39,48 @@ const playerInfos = {
     playerImage: 'mckennie'
   },
   '14': {
-    playerImage: 'arthur'
+    playerImage: 'adzic'
   },
   '15': {
-    playerImage: 'thuram'
+    playerImage: 'arthur'
   },
   '16': {
-    playerImage: 'fagioli'
+    playerImage: 'thuram'
   },
   '17': {
-    playerImage: 'weah'
+    playerImage: 'fagioli'
   },
   '18': {
-    playerImage: 'dluiz'
+    playerImage: 'weah'
   },
   '19': {
-    playerImage: 'cambiaso'
+    playerImage: 'dluiz'
   },
   '20': {
-    playerImage: 'cabal'
+    playerImage: 'cambiaso'
   },
   '21': {
-    playerImage: 'djalo'
+    playerImage: 'cabal'
   },
   '22': {
-    playerImage: 'savona'
+    playerImage: 'djalo'
   },
   '23': {
-    playerImage: 'rouhi'
+    playerImage: 'savona'
   },
   '24': {
-    playerImage: 'mbangula'
+    playerImage: 'rouhi'
   },
   '25': {
-    playerImage: 'perin'
+    playerImage: 'mbangula'
   },
   '26': {
-    playerImage: 'pinsoglio'
+    playerImage: 'perin'
   },
   '27': {
+    playerImage: 'pinsoglio'
+  },
+  '28': {
     playerImage: 'digregorio'
   }
 }
