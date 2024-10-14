@@ -1,0 +1,45 @@
+body {
+  background-color: black;
+}
+
+.items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  row-gap: 200px;
+}
+
+.time {
+  color: white;
+  font-family: Arial;
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.buttons-container {
+  display: flex;
+}
+
+.toggle-button,
+.reset-button {
+  padding: 15px 30px;
+  font-size: 30px;
+  border: none;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.toggle-button:hover,
+.reset-button:hover {
+  background-color: rgb(182, 182, 182);
+}
+
+.toggle-button:active,
+.reset-button:active {
+  opacity: 0.8;
+}

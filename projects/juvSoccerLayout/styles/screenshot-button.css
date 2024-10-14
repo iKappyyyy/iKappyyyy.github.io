@@ -1,0 +1,21 @@
+.screenshot-button {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid black;
+  font-size: 2rem;
+  font-family: "Secular One", sans-serif;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.15s, box-shadow 0.15s ease-out;
+}
+
+.screenshot-button:hover {
+  background: rgb(230, 230, 230);
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.screenshot-button:active {
+  background: rgb(210, 210, 210);
+}

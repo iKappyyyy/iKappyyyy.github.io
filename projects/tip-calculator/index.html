@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator!</title>
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/calculator.css">
+  <link rel="stylesheet" href="styles/result.css">
+  <link rel="shortcut icon" type="image/png" href="images/icon.png"/>
+</head>
+<body>
+  <div class="container-container">
+    <div class="container">
+      <div class="calculator">
+        <h1>Tip Calculator</h1>
+        <h3>Enter the bill amount and tip percentage to calculate the total</h3>
+  
+        <div class="inputs">
+          <p>Bill amount</p>
+          <div class="input-container" id="bill-container">
+            <input type="number" class="js-bill-input">
+            <div class="input-sign">$</div>
+          </div>
+          <p>Tip percentage</p>
+          <div class="input-container" id="tip-container">
+            <input type="number" class="js-tip-input">
+            <div class="input-sign">%</div>
+          </div>
+        </div>
+  
+        <div class="calculate-button-container">
+          <button class="calculate-button js-calculate-button">Calculate</button>
+        </div>
+      </div>
+      <div class="result">
+        <h1>Result:</h1>
+        <div class="result-values-container">
+          <div class="result-values">
+            <div class="separate-values">
+              <div class="value">
+                <h3>Bill</h3>
+                <p class="value-text js-bill-text">0.00</p>
+              </div>
+              <div class="value">
+                <h3>Tip</h3>
+                <p class="value-text js-tip-text">0.00</p>
+              </div>
+            </div>
+            <div class="value">
+              <h3>Total</h3>
+              <p class="value-text js-total-text">0.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="scripts/script.js"></script>
+</body>
+</html>

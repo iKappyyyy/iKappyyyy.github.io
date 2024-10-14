@@ -1,18 +1,36 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-      Daniel's Cutesy Projects!
-    </title>
-    <link rel="stylesheet" href="projects.css">
-    <link rel="icon" type="image/png" href="Cute-Cat-icon.png">
-  </head>
-  <body>
-    <div class="projects-grid-container">
-      <div class="js-projects projects"></div>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/sections.css">
+  <link rel="shortcut icon" type="image/png" href="images/icon.png">
+</head>
+<body>
+  <div id="hero-section">
+    <img src="images/topflowers.png" id="top-flowers">
+    <div class="content">
+      <img id="profile-picture" src="images/pfp.jpg" alt="profile picture">
+      <p>Hi! I'm Daniel, nice to meet you!</p>
     </div>
-    <script src="projects.js"></script>
-  </body>
+  </div>
+  <div class="cyan-section">
+    <p class="header">Here are some of my past projects!</p>
+    <div id="projects-table"></div>
+    <p id="project-description"></p>
+  </div>
+  <div id="footer">
+    <p>Contact Me!</p>
+    <i id="discord-contact" class="fa-brands fa-discord" data-extra-data="ikappyyyy"></i>
+  </div>
+
+  <script src="scripts/contacts.js"></script>
+  <script src="scripts/load-projects.js"></script>
+</body>
 </html>

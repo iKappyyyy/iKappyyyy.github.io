@@ -1,0 +1,175 @@
+#hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+  width: 100%;
+}
+
+#hero-section .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+
+#profile-picture {
+  width: 12em;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  animation: pfp-load 2s ease;
+}
+
+#hero-section p {
+  color: white;
+  font-family: "Figtree", sans-serif;
+  font-weight: 700;
+  font-size: 1.8em;
+  animation: fade-in 4s;
+  margin: 0;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.cyan-section .header {
+  color: #121212;
+  font-family: "Figtree", sans-serif;
+  font-weight: 700;
+  font-size: 2em;
+  animation: fade-in 2s;
+  margin: 0;
+  text-align: center;
+  margin-top: 50px;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+#projects-table {
+  margin-top: auto;
+  display: grid;
+  margin-bottom: auto;
+  grid-template-columns: repeat(3, 1fr);
+  border: 2px;
+  gap: 10px;
+}
+
+#projects-table button {
+  width: 300px;
+  height: 50px;
+  border: 3px solid #375e5d;
+  font-family: "Figtree", sans-serif;
+  font-weight: 700;
+  font-size: 1.1em;
+  background: #3e8381;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 300ms ease;
+}
+
+#projects-table button:hover {
+  background: #95b9b7;
+}
+
+#project-description {
+  border: 3px solid #375e5d;
+  background: #3e8381;
+  border-radius: 20px;
+  width: 590px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Figtree", sans-serif;
+  font-size: 1.1em;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+@media (max-width: 920px) {
+  #projects-table {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 610px) {
+  #project-description {
+    width: 97%;
+  }
+
+  #projects-table {
+    width: 97%;
+  }
+
+  #projects-table button {
+    width: 100%;
+  }
+}
+
+.cyan-section {
+  width: 100%;
+  height: 800px;
+  
+  background-color: #3e8381;
+  background-image: radial-gradient(#80aba9 5%, transparent 5%);
+  background-size: 40px 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* box-shadow: 0 -20px 0 0 #426e6d; */
+}
+
+#footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: "Figtree", sans-serif;
+  position: relative;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  padding: 20px;
+  border-top: 3px solid black;
+}
+
+#footer p:first-of-type {
+  margin-right: auto;
+}
+
+#footer i {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: opacity 150ms ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer i::after {
+  content: attr(data-extra-data);
+  margin-left: 5px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: Arial;
+}
+
+#footer i:hover {
+  opacity: 0.5;
+}
+
+@keyframes pfp-load {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

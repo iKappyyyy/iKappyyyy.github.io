@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/photo.css">
+  <link rel="stylesheet" href="styles/screenshot-button.css">
+  <link rel="stylesheet" href="styles/change-background.css">
+  <link rel="stylesheet" href="styles/change-player.css">
+  <link rel="stylesheet" href="styles/actual-photo.css">
+  <link rel="shortcut icon" type="image/png" href="images/icon.png">
+  <title>יוצר תמונות - יובנטוס ישראל</title>
+</head>
+<body>
+  <div class="image-content js-image-content">
+    <img class="background-image js-background-image" src="images/backgrounds/championsLeague.webp">
+    <div class="player js-player" id="player1">
+      <img src="images/nochoice.webp" class="head">
+    </div>
+    <div class="player js-player" id="player2">
+      <img src="images/nochoice.webp" class="head">
+    </div>
+    <div class="player js-player" id="player3">
+      <img src="images/nochoice.webp" class="head">
+    </div>
+    <div class="player js-player" id="player4">
+      <img src="images/nochoice.webp" class="head">
+    </div>
+    <div class="player js-player" id="player5">
+      <img src="images/nochoice.webp" class="head">
+    </div>
+    <div class="player js-player" id="player6">
+      <img src="images/nochoice.webp" class="head">
+    </div>
+    <div class="player js-player" id="player7">
+      <img src="images/nochoice.webp" class="head">
+    </div>
+    <div class="player js-player" id="player8">
+      <img src="images/nochoice.webp" class="head">
+    </div>
+    <div class="player js-player" id="player9">
+      <img src="images/nochoice.webp" class="head">
+    </div>
+    <div class="player js-player" id="player10">
+      <img src="images/nochoice.webp" class="head">
+    </div>
+    <div class="player js-player" id="player11">
+      <img src="images/nochoice.webp" class="head">
+    </div>
+
+    <div class="background-change-container">
+      <button class="change-background js-change-background">שנה רקע</button>
+      <div class="background-choices js-background-choices">
+      </div>
+    </div>
+  </div>
+
+  <div class="change-player-menu js-change-player-menu">
+  </div>
+
+  <button class="screenshot-button js-screenshot-button">צלם</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="scripts/load-backgrounds.js" type="module"></script>
+  <script src="scripts/changePlayer.js" type="module"></script>
+  <script src="scripts/save-image.js"></script>
+  <script src="scripts/loadPhotoLayout.js" type="module"></script>
+  
+</body>
+</html>
