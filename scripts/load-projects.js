@@ -6,7 +6,7 @@ MUST READ!!!
 - make sure the html page is called index.html
 */
 
-const projectsArray = [
+export const projectsArray = [
   /*
   { 
     folder: '',
@@ -17,7 +17,7 @@ const projectsArray = [
 
   { 
     folder: 'juvSoccerLayout',
-    title: 'Juventus Formations Image Maker', 
+    title: 'Juventus Image Maker', 
     description: 'Create your own Juventus Formation Image, using the Juventus Formations Image Maker! (Hebrew Only)'
   },
   {

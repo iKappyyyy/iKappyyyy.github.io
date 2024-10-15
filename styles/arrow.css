@@ -1,0 +1,26 @@
+
+.scroll-arrow {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: white;
+  animation: bounce 1s infinite;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -10px);
+  }
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
