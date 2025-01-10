@@ -4,10 +4,27 @@
   left: 0;
 }
 
+#estimated-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#estimated-title {
+  text-align: center;
+  margin: 0;
+}
+
+#estimated {
+  cursor: pointer;
+}
+
 .background-choices {
   /* display: none; */
-  z-index: 2;
   position: absolute;
+  z-index: 2;
   left: 5px;
   border: 0px solid black;
   background: #f1f1f1;
@@ -30,7 +47,7 @@
   background: white;
   position: absolute;
   border: 1px outset black;
-  border-top-right-radius: 10px;
+  /* border-bottom-right-radius: 10px; */
   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.5);
   cursor: pointer;
   font-family: "Secular One", sans-serif;
@@ -48,6 +65,22 @@
 
   .background-choices {
     top: 44px;
+  }
+
+  #estimated-title {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  #estimated-container {
+    width: 110px;
+    left: 10px;
+    top: 50px;
+  }
+
+  #estimated {
+    width: 30px;
+    height: 30px; 
   }
 }
 

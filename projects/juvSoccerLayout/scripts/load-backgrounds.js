@@ -2,6 +2,7 @@ import backgroundNames, { backgroundsInfo } from "./data/backgrounds.js";
 
 const backgroundChoices = document.querySelector('.js-background-choices');
 const changeBackgroundButton = document.querySelector('.js-change-background');
+const estimatedLayoutButton = document.getElementById('estimated');
 
 // open and close menu
 let activeBackgroundChoices = false;
@@ -12,6 +13,15 @@ changeBackgroundButton.addEventListener('click', () => {
   } else {
     activeBackgroundChoices = true;
     backgroundChoices.classList.add('active');
+  }
+});
+
+let estimatedLayout = false;
+estimatedLayoutButton.addEventListener('click', () => {
+  if (estimatedLayout) {
+    estimatedLayout = false;
+  } else {
+    estimatedLayout = true;
   }
 });
 
@@ -32,7 +42,11 @@ const backgrounds = document.querySelectorAll('.js-background');
 const imageBackground = document.querySelector('.js-background-image');
 backgrounds.forEach(background => {
   background.addEventListener('click', () => {
-    imageBackground.src = `./images/backgrounds/${background.dataset.image}.webp`;
+    if (estimatedLayout) {
+      imageBackground.src = `./images/backgrounds/${background.dataset.image}estimated.webp`;
+    } else {
+      imageBackground.src = `./images/backgrounds/${background.dataset.image}.webp`;
+    }
   });
 });
 
