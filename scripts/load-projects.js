@@ -36,11 +36,6 @@ export const projectsArray = [
     description: 'Generate a random colour with the click of a button!'
   },
   { 
-    folder: 'cutesy-ask-out',
-    title: 'Ask Out Proposal',
-    description: 'A fun idea I decided to recreate! | PC ONLY | (might be a bit broken at the moment)'
-  },
-  { 
     folder: 'valentine',
     title: 'Valentines Day Ask Out',
     description: 'Will you be my valentine?'
