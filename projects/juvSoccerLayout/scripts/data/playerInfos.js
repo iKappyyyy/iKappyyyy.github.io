@@ -1,86 +1,92 @@
 const playerInfos = {
   '1': {
-    playerImage: 'bremer'
+    playerImage: 'acosta'    
   },
   '2': {
-    playerImage: 'gatti'
+    playerImage: 'bremer'
   },
   '3': {
-    playerImage: 'locatelli'
+    playerImage: 'gatti'
   },
   '4': {
-    playerImage: 'danilo'
+    playerImage: 'locatelli'
   },
   '5': {
-    playerImage: 'conceicao'
+    playerImage: 'danilo'
   },
   '6': {
-    playerImage: 'koopmeiners'
+    playerImage: 'conceicao'
   },
   '7': {
-    playerImage: 'vlahovic'
+    playerImage: 'koopmeiners'
   },
   '8': {
-    playerImage: 'yildiz'
+    playerImage: 'vlahovic'
   },
   '9': {
-    playerImage: 'kostic'
+    playerImage: 'yildiz'
   },
   '10': {
-    playerImage: 'gonzalez'
+    playerImage: 'kostic'
   },
   '11': {
-    playerImage: 'milik'
+    playerImage: 'gonzalez'
   },
   '12': {
-    playerImage: 'kalulu'
+    playerImage: 'milik'
   },
   '13': {
-    playerImage: 'mckennie'
+    playerImage: 'kalulu'
   },
   '14': {
-    playerImage: 'adzic'
+    playerImage: 'mckennie'
   },
   '15': {
-    playerImage: 'arthur'
+    playerImage: 'adzic'
   },
   '16': {
-    playerImage: 'thuram'
+    playerImage: 'arthur'
   },
   '17': {
-    playerImage: 'fagioli'
+    playerImage: 'thuram'
   },
   '18': {
-    playerImage: 'weah'
+    playerImage: 'kmuani'
   },
   '19': {
-    playerImage: 'dluiz'
+    playerImage: 'fagioli'
   },
   '20': {
-    playerImage: 'cambiaso'
+    playerImage: 'weah'
   },
   '21': {
-    playerImage: 'cabal'
+    playerImage: 'dluiz'
   },
   '22': {
-    playerImage: 'djalo'
+    playerImage: 'cambiaso'
   },
   '23': {
-    playerImage: 'savona'
+    playerImage: 'cabal'
   },
   '24': {
-    playerImage: 'rouhi'
+    playerImage: 'djalo'
   },
   '25': {
-    playerImage: 'mbangula'
+    playerImage: 'savona'
   },
   '26': {
-    playerImage: 'perin'
+    playerImage: 'rouhi'
   },
   '27': {
-    playerImage: 'pinsoglio'
+    playerImage: 'mbangula'
   },
   '28': {
+    playerImage: 'perin'
+  },
+  '29': {
+    playerImage: 'pinsoglio'
+  },
+  '30': {
     playerImage: 'digregorio'
   }
 }
