@@ -28,34 +28,46 @@ function createChangePlayerMenuContent() {
 
   const exitButton = document.querySelector('.js-change-player-menu .js-exit-button');
 
+  // Add click event to close the menu and clean up listeners
   exitButton.addEventListener('click', () => {
     changePlayerMenu.classList.remove('active');
+    removePlayerOptionListeners(); // Remove listeners from player options
   });
 }
 
-createChangePlayerMenuContent();
-let playerOptions = document.querySelectorAll('.js-player-option');
+// Function to remove click listeners from player options
+function removePlayerOptionListeners() {
+  const playerOptions = document.querySelectorAll('.js-player-option');
+  playerOptions.forEach(playerOption => {
+    const newPlayerOption = playerOption.cloneNode(true); // Clone the element to remove listeners
+    playerOption.replaceWith(newPlayerOption); // Replace the old element with the clean one
+  });
+}
 
-players.forEach(player => {
-  player.addEventListener('click', () => {
-    if (changePlayerMenu.classList.contains('active')) {
-      return;
-    }
-    changePlayerMenu.classList.add('active');
+function setupPlayerListeners() {
+  players.forEach(player => {
+    player.addEventListener('click', () => {
+      if (changePlayerMenu.classList.contains('active')) {
+        return;
+      }
+      changePlayerMenu.classList.add('active');
+      createChangePlayerMenuContent();
 
-    playerOptions.forEach(playerOption => {
-      playerOption.addEventListener('click', () => {
-        const playerId = playerOption.dataset.playerId;
-        const playerInfo = playerInfos[String(playerId)];
-        player.dataset.player = playerInfo.playerImage;
-        player.innerHTML = `
-          <img src="./images/players/${playerInfo.playerImage}.webp" class="head">
-        `;
-        changePlayerMenu.classList.remove('active');
-        // remove event listeners
-        createChangePlayerMenuContent();
-        playerOptions = document.querySelectorAll('.js-player-option');
+      const playerOptions = document.querySelectorAll('.js-player-option');
+      playerOptions.forEach(playerOption => {
+        playerOption.addEventListener('click', () => {
+          const playerId = playerOption.dataset.playerId;
+          const playerInfo = playerInfos[String(playerId)];
+          player.dataset.player = playerInfo.playerImage;
+          player.innerHTML = `
+            <img src="./images/players/${playerInfo.playerImage}.webp" class="head">
+          `;
+          changePlayerMenu.classList.remove('active');
+          removePlayerOptionListeners(); // Clean up listeners
+        });
       });
     });
   });
-});
+}
+
+setupPlayerListeners();
