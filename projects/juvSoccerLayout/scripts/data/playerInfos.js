@@ -33,60 +33,63 @@ const playerInfos = {
     playerImage: 'gonzalez'
   },
   '12': {
-    playerImage: 'milik'
+    playerImage: 'veiga'
   },
   '13': {
-    playerImage: 'kalulu'
+    playerImage: 'milik'
   },
   '14': {
-    playerImage: 'mckennie'
+    playerImage: 'kalulu'
   },
   '15': {
-    playerImage: 'adzic'
+    playerImage: 'mckennie'
   },
   '16': {
-    playerImage: 'arthur'
+    playerImage: 'adzic'
   },
   '17': {
-    playerImage: 'thuram'
+    playerImage: 'arthur'
   },
   '18': {
-    playerImage: 'kmuani'
+    playerImage: 'thuram'
   },
   '19': {
-    playerImage: 'fagioli'
+    playerImage: 'kmuani'
   },
   '20': {
-    playerImage: 'weah'
+    playerImage: 'fagioli'
   },
   '21': {
-    playerImage: 'dluiz'
+    playerImage: 'weah'
   },
   '22': {
-    playerImage: 'cambiaso'
+    playerImage: 'dluiz'
   },
   '23': {
-    playerImage: 'cabal'
+    playerImage: 'cambiaso'
   },
   '24': {
-    playerImage: 'djalo'
+    playerImage: 'cabal'
   },
   '25': {
-    playerImage: 'savona'
+    playerImage: 'djalo'
   },
   '26': {
-    playerImage: 'rouhi'
+    playerImage: 'savona'
   },
   '27': {
-    playerImage: 'mbangula'
+    playerImage: 'rouhi'
   },
   '28': {
-    playerImage: 'perin'
+    playerImage: 'mbangula'
   },
   '29': {
-    playerImage: 'pinsoglio'
+    playerImage: 'perin'
   },
   '30': {
+    playerImage: 'pinsoglio'
+  },
+  '31': {
     playerImage: 'digregorio'
   }
 }
