@@ -15,81 +15,84 @@ const playerInfos = {
     playerImage: 'danilo'
   },
   '6': {
-    playerImage: 'conceicao'
+    playerImage: 'kelly'
   },
   '7': {
-    playerImage: 'koopmeiners'
+    playerImage: 'conceicao'
   },
   '8': {
-    playerImage: 'vlahovic'
+    playerImage: 'koopmeiners'
   },
   '9': {
-    playerImage: 'yildiz'
+    playerImage: 'vlahovic'
   },
   '10': {
-    playerImage: 'kostic'
+    playerImage: 'yildiz'
   },
   '11': {
-    playerImage: 'gonzalez'
+    playerImage: 'kostic'
   },
   '12': {
-    playerImage: 'veiga'
+    playerImage: 'gonzalez'
   },
   '13': {
-    playerImage: 'milik'
+    playerImage: 'veiga'
   },
   '14': {
-    playerImage: 'kalulu'
+    playerImage: 'milik'
   },
   '15': {
-    playerImage: 'mckennie'
+    playerImage: 'kalulu'
   },
   '16': {
-    playerImage: 'adzic'
+    playerImage: 'mckennie'
   },
   '17': {
-    playerImage: 'arthur'
+    playerImage: 'adzic'
   },
   '18': {
-    playerImage: 'thuram'
+    playerImage: 'arthur'
   },
   '19': {
-    playerImage: 'kmuani'
+    playerImage: 'thuram'
   },
   '20': {
-    playerImage: 'fagioli'
+    playerImage: 'kmuani'
   },
   '21': {
-    playerImage: 'weah'
+    playerImage: 'fagioli'
   },
   '22': {
-    playerImage: 'dluiz'
+    playerImage: 'weah'
   },
   '23': {
-    playerImage: 'cambiaso'
+    playerImage: 'dluiz'
   },
   '24': {
-    playerImage: 'cabal'
+    playerImage: 'cambiaso'
   },
   '25': {
-    playerImage: 'djalo'
+    playerImage: 'cabal'
   },
   '26': {
-    playerImage: 'savona'
+    playerImage: 'djalo'
   },
   '27': {
-    playerImage: 'rouhi'
+    playerImage: 'savona'
   },
   '28': {
-    playerImage: 'mbangula'
+    playerImage: 'rouhi'
   },
   '29': {
-    playerImage: 'perin'
+    playerImage: 'mbangula'
   },
   '30': {
-    playerImage: 'pinsoglio'
+    playerImage: 'perin'
   },
   '31': {
+    playerImage: 'pinsoglio'
+  },
+  '32': {
     playerImage: 'digregorio'
   }
 }
