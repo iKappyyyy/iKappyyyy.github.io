@@ -71,6 +71,30 @@ const photoPositions = {
     player10: { row: 3, column: 2 },
     player11: { row: 3, column: 4 }
   },
+  '3-4-2-1': {
+    player2: { row: 30, column: 3 },
+    player3: { row: 30, column: 2 },
+    player4: { row: 30, column: 4 },
+    player5: { row: 20, column: 2 },
+    player6: { row: 20, column: 4 },
+    player7: { row: 18, column: 1 },
+    player8: { row: 18, column: 5 },
+    player9: { row: 10, column: 2 },
+    player10: { row: 10, column: 4 },
+    player11: { row: 5, column: 3 }
+  },
+  '3-4-1-2': {
+    player2: { row: 30, column: 3 },
+    player3: { row: 30, column: 2 },
+    player4: { row: 30, column: 4 },
+    player5: { row: 20, column: 2 },
+    player6: { row: 20, column: 4 },
+    player7: { row: 18, column: 1 },
+    player8: { row: 18, column: 5 },
+    player9: { row: 13, column: 3 },
+    player10: { row: 5, column: 2 },
+    player11: { row: 5, column: 4 }
+  }
 }
 
 export default photoPositions;
