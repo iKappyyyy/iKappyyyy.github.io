@@ -66,33 +66,36 @@ const playerInfos = {
     playerImage: 'weah'
   },
   '23': {
-    playerImage: 'dluiz'
+    playerImage: 'rugani'
   },
   '24': {
-    playerImage: 'cambiaso'
+    playerImage: 'dluiz'
   },
   '25': {
-    playerImage: 'cabal'
+    playerImage: 'cambiaso'
   },
   '26': {
-    playerImage: 'djalo'
+    playerImage: 'cabal'
   },
   '27': {
-    playerImage: 'savona'
+    playerImage: 'djalo'
   },
   '28': {
-    playerImage: 'rouhi'
+    playerImage: 'savona'
   },
   '29': {
-    playerImage: 'mbangula'
+    playerImage: 'rouhi'
   },
   '30': {
-    playerImage: 'perin'
+    playerImage: 'mbangula'
   },
   '31': {
-    playerImage: 'pinsoglio'
+    playerImage: 'perin'
   },
   '32': {
+    playerImage: 'pinsoglio'
+  },
+  '33': {
     playerImage: 'digregorio'
   }
 }
