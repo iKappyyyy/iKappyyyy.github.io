@@ -55,7 +55,7 @@ projectsArray.forEach(projectInfo => {
   projectButton.innerText = projectInfo.title;
 
   projectButton.addEventListener('click', () => {
-    if (projectInfo.folder === 'JuvSoccerLayout') document.location.href = `juventus-image-maker`;
+    if (projectInfo.folder === 'juvSoccerLayout') document.location.href = `juventus-image-maker`;
     else document.location.href = `projects/${projectInfo.folder}/index.html`;
   });
 
