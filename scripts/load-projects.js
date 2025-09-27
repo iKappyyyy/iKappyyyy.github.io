@@ -18,7 +18,7 @@ export const projectsArray = [
   { 
     folder: 'juvSoccerLayout',
     title: 'Juventus Image Maker', 
-    description: 'Create your own Juventus Formation Image, using the Juventus Formations Image Maker! (Hebrew Only)'
+    description: 'Create your own Juventus Formation Image, using the Juventus Formations Image Maker! Made with React 19.'
   },
   {
     folder: 'WynnCoordsTool',
@@ -55,7 +55,8 @@ projectsArray.forEach(projectInfo => {
   projectButton.innerText = projectInfo.title;
 
   projectButton.addEventListener('click', () => {
-    document.location.href = `projects/${projectInfo.folder}/index.html`;
+    if (projectInfo.folder === 'JuvSoccerLayout') document.location.href = `juventus-image-maker`;
+    else document.location.href = `projects/${projectInfo.folder}/index.html`;
   });
 
   projectButton.addEventListener('mouseover', () => {
